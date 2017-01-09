@@ -1,0 +1,783 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:          64
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 4.05E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx20/b6.rea                                                                                        
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx20/b6.map                                                                                        
+           0           1           1          64          64  NELV
+          15           1           1          64          64  NELV
+          30           1           1          64          64  NELV
+           6           1           1          64          64  NELV
+          23           1           1          64          64  NELV
+          21           1           1          64          64  NELV
+           7           1           1          64          64  NELV
+          16           1           1          64          64  NELV
+          14           1           1          64          64  NELV
+           9           1           1          64          64  NELV
+          10           1           1          64          64  NELV
+          11           1           1          64          64  NELV
+          26           1           1          64          64  NELV
+          22           1           1          64          64  NELV
+          18           1           1          64          64  NELV
+          12           1           1          64          64  NELV
+          13           1           1          64          64  NELV
+          29           1           1          64          64  NELV
+          28           1           1          64          64  NELV
+          27           1           1          64          64  NELV
+          24           1           1          64          64  NELV
+          25           1           1          64          64  NELV
+          31           1           1          64          64  NELV
+          20           1           1          64          64  NELV
+          19           1           1          64          64  NELV
+           5           1           1          64          64  NELV
+          17           1           1          64          64  NELV
+           2           1           1          64          64  NELV
+           3           1           1          64          64  NELV
+           4           1           1          64          64  NELV
+           8           1           1          64          64  NELV
+           1           1           1          64          64  NELV
+          39           1           1          64          64  NELV
+          52           1           1          64          64  NELV
+          55           1           1          64          64  NELV
+          48           1           1          64          64  NELV
+          63           1           1          64          64  NELV
+          62           1           1          64          64  NELV
+          50           1           1          64          64  NELV
+          59           1           1          64          64  NELV
+          58           1           1          64          64  NELV
+ RANK     0 IEG      53
+ element load imbalance:            0           1           1
+ done :: mapping elements to processors
+  
+          40           1           1          64          64  NELV
+          53           1           1          64          64  NELV
+          60           1           1          64          64  NELV
+          34           1           1          64          64  NELV
+          45           1           1          64          64  NELV
+          47           1           1          64          64  NELV
+          61           1           1          64          64  NELV
+          36           1           1          64          64  NELV
+          37           1           1          64          64  NELV
+          32           1           1          64          64  NELV
+          38           1           1          64          64  NELV
+          54           1           1          64          64  NELV
+          35           1           1          64          64  NELV
+          49           1           1          64          64  NELV
+          51           1           1          64          64  NELV
+          44           1           1          64          64  NELV
+          46           1           1          64          64  NELV
+          42           1           1          64          64  NELV
+          56           1           1          64          64  NELV
+          57           1           1          64          64  NELV
+          43           1           1          64          64  NELV
+          33           1           1          64          64  NELV
+          41           1           1          64          64  NELV
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:          64          64         100
+ lx1  /lx2  /lx3 :          20          20          20
+ done :: read .rea file   0.10758     sec
+
+ setup mesh topology
+   Right-handed check complete for      64 elements. OK.
+   setvert3d:  20       84257      457505       84257       84257
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 51309 unique labels shared
+   pairwise times (avg, min, max): 0.000150788 0.0001441 0.000164104
+   crystal router                : 0.000236569 0.000234008 0.000239301
+   all reduce                    : 0.00123021 0.0012269 0.0012347
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 42748 28708 56692
+   buffer bytes (avg, min, max): 31014 20176 42368
+   setupds time 9.9620E-02 seconds   0 20       84257          64
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=          30
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    2820835.64709723     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    2820835.64709723     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1          11          19
+ mg_ny:           1          11          19
+ mg_nz:           1          11          19
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 117 unique labels shared
+   pairwise times (avg, min, max): 0.000108879 0.000102186 0.000117493
+   crystal router                : 2.46018e-05 2.44141e-05 2.47955e-05
+   all reduce                    : 6.32714e-05 6.24895e-05 6.39915e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 3420 3252 3660
+   buffer bytes (avg, min, max): 420 352 480
+   setupds time 6.7890E-03 seconds   1  2         125          64
+   setvert3d:   4        1697        2209        1697        1697
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1197 unique labels shared
+   pairwise times (avg, min, max): 0.00010775 0.000101399 0.000117898
+   crystal router                : 2.74677e-05 2.72989e-05 2.76089e-05
+   all reduce                    : 0.000140825 0.000139594 0.0001436
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 13884 11604 15900
+   buffer bytes (avg, min, max): 2228 1792 2624
+   setupds time 1.0273E-02 seconds   2  4        1697          64
+   setvert3d:  12       27425       91425       27425       27425
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 17037 unique labels shared
+   pairwise times (avg, min, max): 0.000121438 0.00011251 0.000131917
+   crystal router                : 8.64435e-05 8.5783e-05 8.73089e-05
+   all reduce                    : 0.00074728 0.000742602 0.000753999
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 139260 106452 170460
+   buffer bytes (avg, min, max): 22722 17792 26688
+   setupds time 4.4583E-02 seconds   3 12       27425          64
+   setvert3d:  14       38717      149309       38717       38717
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 23877 unique labels shared
+   pairwise times (avg, min, max): 0.00011672 0.000110197 0.000128102
+   crystal router                : 9.61401e-05 9.51052e-05 9.72986e-05
+   all reduce                    : 0.000955132 0.000949693 0.000966311
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 191484 145524 235500
+   buffer bytes (avg, min, max): 31170 24352 36544
+   setupds time 6.0306E-02 seconds   4 14       38717          64
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           3          19
+ h1_mg_ny:           1           3          19
+ h1_mg_nz:           1           3          19
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 117 unique labels shared
+   pairwise times (avg, min, max): 0.000108214 9.77993e-05 0.000120997
+   crystal router                : 5.85746e-05 5.76019e-05 5.91993e-05
+   all reduce                    : 6.86731e-05 6.72102e-05 7.02143e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 3420 3252 3660
+   buffer bytes (avg, min, max): 420 352 480
+   setupds time 7.5159E-03 seconds   5  2         125          64
+   setvert3d:   4        1697        2209        1697        1697
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1197 unique labels shared
+   pairwise times (avg, min, max): 9.83741e-05 9.28164e-05 0.000107789
+   crystal router                : 4.15415e-05 4.11987e-05 4.27008e-05
+   all reduce                    : 0.000150234 0.000148702 0.000153494
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 13884 11604 15900
+   buffer bytes (avg, min, max): 2228 1792 2624
+   setupds time 1.0480E-02 seconds   6  4        1697          64
+   setvert3d:   4        1697        2209        1697        1697
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1197 unique labels shared
+   pairwise times (avg, min, max): 9.80537e-05 9.33886e-05 0.000107598
+   crystal router                : 3.46456e-05 3.39031e-05 3.60966e-05
+   all reduce                    : 0.000142094 0.0001405 0.000145197
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 13884 11604 15900
+   buffer bytes (avg, min, max): 2228 1792 2624
+   setupds time 9.1980E-03 seconds   7  4        1697          64
+   setvert3d:   6        5213        9309        5213        5213
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 3429 unique labels shared
+   pairwise times (avg, min, max): 0.000109534 0.000102615 0.000120902
+   crystal router                : 3.88302e-05 3.84092e-05 3.92914e-05
+   all reduce                    : 0.000260349 0.000259185 0.000262809
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 32700 26100 38700
+   buffer bytes (avg, min, max): 5354 4256 6336
+   setupds time 1.6313E-02 seconds   8  6        5213          64
+   setvert3d:  20       84257      457505       84257       84257
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 51309 unique labels shared
+   pairwise times (avg, min, max): 0.000127169 0.000119209 0.000140285
+   crystal router                : 0.00020738 0.000204897 0.000209713
+   all reduce                    : 0.0011294 0.001125 0.0011354
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 42748 28708 56692
+   buffer bytes (avg, min, max): 31014 20176 42368
+   setupds time 8.4670E-02 seconds   9 20       84257          64
+   setvert3d:  22      103325      615325      103325      103325
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 62757 unique labels shared
+   pairwise times (avg, min, max): 0.00012667 0.00011611 0.000138402
+   crystal router                : 0.00023596 0.000234103 0.000238919
+   all reduce                    : 0.00136366 0.00135939 0.00136929
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 51712 34708 68596
+   buffer bytes (avg, min, max): 37278 24304 50816
+   setupds time 1.0282E-01 seconds  10 22      103325          64
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 117 unique labels shared
+   pairwise times (avg, min, max): 9.74353e-05 9.13858e-05 0.000107908
+   crystal router                : 2.75102e-05 2.68936e-05 2.81096e-05
+   all reduce                    : 5.54241e-05 5.40972e-05 5.66006e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 3420 3252 3660
+   buffer bytes (avg, min, max): 420 352 480
+ done :: setup h1 coarse grid   2.071809768676758E-002  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  5.1917E-04  5.1917E-04  5.1917E-04  4.2892E-17  4.4911E-17  4.3740E-17
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1973E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1899E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1895E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1890E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1888E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1886E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1891E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1889E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1893E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1894E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1531E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1523E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1519E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1521E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1521E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1522E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1521E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1522E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1521E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1522E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1722E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1716E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1715E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1715E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1715E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1715E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1718E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1719E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1714E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1719E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1846E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1839E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1835E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1838E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1840E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1837E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1839E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1839E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1884E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1841E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1964E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1961E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1955E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1954E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1952E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1964E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1952E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1960E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1957E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.1952E-08
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx20/b6.sch                                   
+                                                      
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 20       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2442E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2414E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2416E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2412E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2414E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2411E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2448E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2419E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2413E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2420E-08
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 20       64  1.2010E-04  1.2010E-04  1.2010E-04  error s
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2641E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2631E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2636E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2638E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2635E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2637E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2636E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2636E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2631E-08
+ 
+nelt =       1, np =        64, nx1 =      20, elements =        64
+Solve Time =   0.2634E-08
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+  19       64  100  0.0000E+00  0.0000E+00  0.0000E+00 time for 3 hmholtz
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+EXIT: quit after cggov         19
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+ 20       64  1.2071E-04  1.2071E-04  1.2071E-04  error n
+  
+call exitt: dying ...
+  
+backtrace(): obtained 8 stack frames.
+./nek5000() [0x786615]
+./nek5000() [0x96a339]
+./nek5000() [0x40e12c]
+./nek5000() [0x426c46]
+./nek5000() [0x4251fe]
+./nek5000() [0x4054fe]
+/lib64/libc.so.6(__libc_start_main+0xf5) [0x2aaab1ca3b25]
+./nek5000() [0x405409]
+  
+total elapsed time             :   1.30322E+02 sec
+total solver time incl. I/O    :   0.00000E+00 sec
+time/timestep                  :   0.00000E+00 sec
+CPU seconds/timestep/gridpt    :   0.00000E+00 sec
+
+Application 2260212 resources: utime ~8239s, stime ~118s, Rss ~97040, inblocks ~0, outblocks ~0

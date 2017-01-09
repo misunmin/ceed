@@ -1,0 +1,908 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:         128
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 4.77E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx11/b10.rea                                                                                       
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx11/b10.map                                                                                       
+ RANK     0 IEG     897     898     905     906     961     962     969     970
+ element load imbalance:            0           8           8
+ done :: mapping elements to processors
+  
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:        1024        1024         100
+ lx1  /lx2  /lx3 :          11          11          11
+ done :: read .rea file   0.73581     sec
+
+ setup mesh topology
+   Right-handed check complete for    1024 elements. OK.
+   setvert3d:  11      309825     1056321      309825      309825
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 119385 unique labels shared
+   pairwise times (avg, min, max): 0.000139378 0.000130701 0.000155997
+   crystal router                : 0.000287142 0.000282407 0.00029099
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 80965 62908 93772
+   buffer bytes (avg, min, max): 36099 22192 46496
+   setupds time 9.2583E-02 seconds   0 11      309825        1024
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=          16
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    1911255.88560846     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    1911255.88560846     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           5          10
+ mg_ny:           1           5          10
+ mg_nz:           1           5          10
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1017 unique labels shared
+   pairwise times (avg, min, max): 0.000103939 9.36031e-05 0.000119305
+   crystal router                : 6.1593e-05 6.12974e-05 6.19173e-05
+   all reduce                    : 0.000127188 0.0001266 0.000128007
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 9365 7844 10388
+   buffer bytes (avg, min, max): 1236 944 1344
+   setupds time 1.0110E-02 seconds   1  2        1377        1024
+   setvert3d:   4       22433       30625       22433       22433
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 10297 unique labels shared
+   pairwise times (avg, min, max): 0.000105824 9.02891e-05 0.00012629
+   crystal router                : 5.92617e-05 5.79119e-05 6.10113e-05
+   all reduce                    : 0.000640935 0.000637388 0.00064559
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 56345 42212 66260
+   buffer bytes (avg, min, max): 7904 5872 8768
+   setupds time 3.0490E-02 seconds   2  4       22433        1024
+   setvert3d:   6       70625      136161       70625       70625
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 29305 unique labels shared
+   pairwise times (avg, min, max): 0.000104885 9.32932e-05 0.000122499
+   crystal router                : 8.69604e-05 8.59022e-05 8.80957e-05
+   all reduce                    : 0.00254435 0.00253789 0.00255921
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 145181 105764 173588
+   buffer bytes (avg, min, max): 20184 14896 22336
+   setupds time 7.0725E-02 seconds   3  6       70625        1024
+   setvert3d:   8      145953      367137      145953      145953
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 58041 unique labels shared
+   pairwise times (avg, min, max): 0.000114432 0.000101304 0.000131011
+   crystal router                : 0.000135124 0.000132895 0.0001369
+   all reduce                    : 0.00143414 0.00142691 0.0014411
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 41293 32092 47836
+   buffer bytes (avg, min, max): 18963 11536 24608
+   setupds time 8.7179E-02 seconds   4  8      145953        1024
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           3          10
+ h1_mg_ny:           1           3          10
+ h1_mg_nz:           1           3          10
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1017 unique labels shared
+   pairwise times (avg, min, max): 9.94248e-05 9.31978e-05 0.000111818
+   crystal router                : 4.85973e-05 4.69923e-05 5.30005e-05
+   all reduce                    : 0.000145094 0.000144291 0.000146103
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 9365 7844 10388
+   buffer bytes (avg, min, max): 1236 944 1344
+   setupds time 1.0526E-02 seconds   5  2        1377        1024
+   setvert3d:   4       22433       30625       22433       22433
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 10297 unique labels shared
+   pairwise times (avg, min, max): 0.000100897 9.53913e-05 0.000115013
+   crystal router                : 6.87648e-05 6.74009e-05 7.06911e-05
+   all reduce                    : 0.000663807 0.000660896 0.000668383
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 56345 42212 66260
+   buffer bytes (avg, min, max): 7904 5872 8768
+   setupds time 3.9972E-02 seconds   6  4       22433        1024
+   setvert3d:   4       22433       30625       22433       22433
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 10297 unique labels shared
+   pairwise times (avg, min, max): 9.68087e-05 8.57115e-05 0.000111008
+   crystal router                : 5.90788e-05 5.81026e-05 6.01053e-05
+   all reduce                    : 0.000630721 0.000625896 0.000636816
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 56345 42212 66260
+   buffer bytes (avg, min, max): 7904 5872 8768
+   setupds time 2.0157E-02 seconds   7  4       22433        1024
+   setvert3d:   6       70625      136161       70625       70625
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 29305 unique labels shared
+   pairwise times (avg, min, max): 0.000102825 8.78096e-05 0.000117111
+   crystal router                : 8.58376e-05 8.47101e-05 8.71897e-05
+   all reduce                    : 0.00127301 0.00126748 0.00128269
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 145181 105764 173588
+   buffer bytes (avg, min, max): 20184 14896 22336
+   setupds time 5.3304E-02 seconds   8  6       70625        1024
+   setvert3d:  11      309825     1056321      309825      309825
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 119385 unique labels shared
+   pairwise times (avg, min, max): 0.000109497 9.77039e-05 0.00012629
+   crystal router                : 0.000284188 0.000279999 0.000288606
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 80965 62908 93772
+   buffer bytes (avg, min, max): 36099 22192 46496
+   setupds time 7.3091E-02 seconds   9 11      309825        1024
+   setvert3d:  13      452993     1815937      452993      452993
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 172441 unique labels shared
+   pairwise times (avg, min, max): 0.00012772 0.000111699 0.000147796
+   crystal router                : 0.000401191 0.000396013 0.000404692
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 114853 89212 133036
+   buffer bytes (avg, min, max): 50563 31216 64928
+   setupds time 9.2963E-02 seconds  10 13      452993        1024
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1017 unique labels shared
+   pairwise times (avg, min, max): 8.64698e-05 7.70092e-05 9.67979e-05
+   crystal router                : 4.68738e-05 4.58956e-05 4.77076e-05
+   all reduce                    : 0.000128508 0.000127578 0.000129509
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 9365 7844 10388
+   buffer bytes (avg, min, max): 1236 944 1344
+ done :: setup h1 coarse grid   4.112219810485840E-002  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  8.4559E-04  8.4559E-04  3.3823E-03  3.9775E-17  1.1799E-16  1.1799E-16
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.8086E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7976E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7981E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7948E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7937E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7943E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7964E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7930E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7934E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7940E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6183E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6139E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6148E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6135E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6352E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6124E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6142E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6133E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6130E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6138E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7048E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6987E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6985E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6991E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7032E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6994E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6987E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7017E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6996E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.6980E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7720E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7676E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7654E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7695E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7676E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7682E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7675E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7699E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7670E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.7671E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.8382E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.8299E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.8307E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.8324E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.8322E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.8320E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.8337E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.8498E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.8325E-09
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.8338E-09
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx11/b10.sch                                  
+                                                      
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     1024  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1133E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1114E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1118E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1118E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1118E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1117E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1118E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1116E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1112E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1117E-08
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 11     1024  4.0804E-09  4.0804E-09  4.0804E-09  error s
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1112E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1103E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1106E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1106E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1106E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1105E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1107E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1105E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1105E-08
+ 
+nelt =       8, np =       128, nx1 =      11, elements =      1024
+Solve Time =   0.1105E-08
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+  10     1024  100  0.0000E+00  0.0000E+00  0.0000E+00 time for 3 hmholtz
+EXIT: quit after cggov         10
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+  
+call exitt: dying ...
+  
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+backtrace(): obtained 8 stack frames.
+./nek5000() [0x77c7b5]
+./nek5000() [0x960549]
+./nek5000() [0x40de8c]
+./nek5000() [0x426686]
+./nek5000() [0x424c3e]
+./nek5000() [0x4054fe]
+/lib64/libc.so.6(__libc_start_main+0xf5) [0x2aaab1ca3b25]
+./nek5000() [0x405409]
+  
+total elapsed time             :   3.11041E+02 sec
+total solver time incl. I/O    :   0.00000E+00 sec
+time/timestep                  :   0.00000E+00 sec
+CPU seconds/timestep/gridpt    :   0.00000E+00 sec
+
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+ 11     1024  4.0824E-09  4.0824E-09  4.0824E-09  error n
+Application 2258015 resources: utime ~39566s, stime ~233s, Rss ~46044, inblocks ~0, outblocks ~0

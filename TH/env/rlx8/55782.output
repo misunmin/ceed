@@ -1,0 +1,1292 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:         256
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 4.05E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx8/b11.rea                                                                                        
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx8/b11.map                                                                                        
+ RANK     0 IEG    1793    1794    1801    1802    1921    1922    1929    1930
+ element load imbalance:            0           8           8
+ done :: mapping elements to processors
+  
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:        2048        2048         100
+ lx1  /lx2  /lx3 :           8           8           8
+ done :: read .rea file    3.0305     sec
+
+ setup mesh topology
+   Right-handed check complete for    2048 elements. OK.
+   setvert3d:   8      285465      727833      285465      285465
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 121089 unique labels shared
+   pairwise times (avg, min, max): 0.000130802 0.000117707 0.000150299
+   crystal router                : 0.000199414 0.000197196 0.000201392
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 42602.5 32092 47836
+   buffer bytes (avg, min, max): 20068.5 11536 24608
+   setupds time 8.1979E-02 seconds   0  8      285465        2048
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=          12
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    749853.711745888     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    749853.711745888     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           3           7
+ mg_ny:           1           3           7
+ mg_nz:           1           3           7
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2001 unique labels shared
+   pairwise times (avg, min, max): 0.000110484 8.7285e-05 0.000132704
+   crystal router                : 5.68744e-05 5.61953e-05 5.76973e-05
+   all reduce                    : 0.000240968 0.000239301 0.000243592
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 10640.5 8860 11860
+   buffer bytes (avg, min, max): 1310 944 1472
+   setupds time 1.2245E-02 seconds   1  2        2601        2048
+   setvert3d:   4       43641       60025       43641       43641
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 21217 unique labels shared
+   pairwise times (avg, min, max): 0.000109964 9.02891e-05 0.000128412
+   crystal router                : 0.00011095 0.000109816 0.000111985
+   all reduce                    : 0.00202013 0.002016 0.00202761
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 64982.5 47740 75508
+   buffer bytes (avg, min, max): 8432 5872 9600
+   setupds time 5.6759E-02 seconds   2  4       43641        2048
+   setvert3d:   4       43641       60025       43641       43641
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 21217 unique labels shared
+   pairwise times (avg, min, max): 0.000112208 0.000100088 0.000128698
+   crystal router                : 7.92586e-05 7.85828e-05 8.02994e-05
+   all reduce                    : 0.00112747 0.0011214 0.00113809
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 64982.5 47740 75508
+   buffer bytes (avg, min, max): 8432 5872 9600
+   setupds time 4.4662E-02 seconds   3  4       43641        2048
+   setvert3d:   6      137929      269001      137929      137929
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 60913 unique labels shared
+   pairwise times (avg, min, max): 0.000111438 9.60827e-05 0.000126696
+   crystal router                : 0.00012497 0.000123191 0.000127101
+   all reduce                    : 0.00159917 0.00159109 0.00160749
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 22996.5 17308 25852
+   buffer bytes (avg, min, max): 11216.5 6352 13856
+   setupds time 1.1949E-01 seconds   4  6      137929        2048
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           3           7
+ h1_mg_ny:           1           3           7
+ h1_mg_nz:           1           3           7
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2001 unique labels shared
+   pairwise times (avg, min, max): 0.000106189 9.21965e-05 0.000119686
+   crystal router                : 5.95542e-05 5.8794e-05 6.04868e-05
+   all reduce                    : 0.000249453 0.000248003 0.00025239
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 10640.5 8860 11860
+   buffer bytes (avg, min, max): 1310 944 1472
+   setupds time 1.2425E-02 seconds   5  2        2601        2048
+   setvert3d:   4       43641       60025       43641       43641
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 21217 unique labels shared
+   pairwise times (avg, min, max): 0.000109184 9.83e-05 0.000123501
+   crystal router                : 0.000100805 0.000100017 0.0001019
+   all reduce                    : 0.00114035 0.0011358 0.00114861
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 64982.5 47740 75508
+   buffer bytes (avg, min, max): 8432 5872 9600
+   setupds time 4.9249E-02 seconds   6  4       43641        2048
+   setvert3d:   4       43641       60025       43641       43641
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 21217 unique labels shared
+   pairwise times (avg, min, max): 0.000101956 9.0313e-05 0.000118899
+   crystal router                : 7.60769e-05 7.48873e-05 7.77006e-05
+   all reduce                    : 0.00114541 0.001138 0.0011585
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 64982.5 47740 75508
+   buffer bytes (avg, min, max): 8432 5872 9600
+   setupds time 5.3675E-02 seconds   7  4       43641        2048
+   setvert3d:   6      137929      269001      137929      137929
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 60913 unique labels shared
+   pairwise times (avg, min, max): 0.000112968 9.83e-05 0.000126505
+   crystal router                : 0.000116093 0.000114393 0.000117898
+   all reduce                    : 0.00153106 0.00152409 0.0015394
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 168092 119644 197524
+   buffer bytes (avg, min, max): 21516 14896 24384
+   setupds time 8.0719E-02 seconds   8  6      137929        2048
+   setvert3d:   8      285465      727833      285465      285465
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 121089 unique labels shared
+   pairwise times (avg, min, max): 0.000114071 0.000100899 0.000126815
+   crystal router                : 0.000175769 0.000167894 0.000181103
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 42602.5 32092 47836
+   buffer bytes (avg, min, max): 20068.5 11536 24608
+   setupds time 5.4810E-02 seconds   9  8      285465        2048
+   setvert3d:  10      486249     1534825      486249      486249
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 201745 unique labels shared
+   pairwise times (avg, min, max): 0.000120147 0.000104618 0.000134778
+   crystal router                : 0.000312322 0.000307584 0.000317407
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 68352.5 51484 76732
+   buffer bytes (avg, min, max): 31480.5 18256 38432
+   setupds time 8.8821E-02 seconds  10 10      486249        2048
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2001 unique labels shared
+   pairwise times (avg, min, max): 9.07968e-05 8.05855e-05 0.000100684
+   crystal router                : 7.32986e-05 7.1907e-05 7.4482e-05
+   all reduce                    : 0.000243288 0.000241899 0.000246811
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 10640.5 8860 11860
+   buffer bytes (avg, min, max): 1310 944 1472
+ done :: setup h1 coarse grid   5.996298789978027E-002  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  1.0964E-03  4.3855E-03  4.3855E-03  1.1685E-16  1.1685E-16  3.1161E-16
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5054E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4972E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4972E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4940E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5010E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4922E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4927E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4922E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4973E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4964E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.3493E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.3523E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.3438E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.3453E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.3439E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.3446E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.3447E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.3459E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.3427E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.3445E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4489E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4501E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4495E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4494E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4501E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4510E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4472E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4480E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4496E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.4484E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5208E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5184E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5179E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5174E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5164E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5178E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5189E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5166E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5178E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5163E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5827E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5810E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5820E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5776E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5806E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5809E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5790E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5825E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5813E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.5786E-09
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx8/b11.sch                                   
+                                                      
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  8     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.9043E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8862E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8848E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8859E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8867E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8816E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8793E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8824E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8890E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8831E-09
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+  8     2048  8.3267E-15  8.3267E-15  8.3267E-15  error s
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8276E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8079E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8023E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8039E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8024E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8059E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8054E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8061E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8051E-09
+ 
+nelt =       8, np =       256, nx1 =       8, elements =      2048
+Solve Time =   0.8110E-09
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+   7     2048  100  0.0000E+00  0.0000E+00  0.0000E+00 time for 3 hmholtz
+EXIT: quit after cggov          7
+  
+call exitt: dying ...
+  
+backtrace(): obtained 8 stack frames.
+./nek5000() [0x777435]
+./nek5000() [0x959f09]
+./nek5000() [0x40cc3c]
+./nek5000() [0x4235f6]
+./nek5000() [0x421bae]
+./nek5000() [0x4054fe]
+/lib64/libc.so.6(__libc_start_main+0xf5) [0x2aaab1ca3b25]
+./nek5000() [0x405409]
+  
+total elapsed time             :   2.41498E+02 sec
+total solver time incl. I/O    :   0.00000E+00 sec
+time/timestep                  :   0.00000E+00 sec
+CPU seconds/timestep/gridpt    :   0.00000E+00 sec
+
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+  8     2048  8.8818E-15  8.8818E-15  8.8818E-15  error n
+Application 2257095 resources: utime ~61565s, stime ~254s, Rss ~32852, inblocks ~0, outblocks ~0

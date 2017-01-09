@@ -1,0 +1,1295 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:         256
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 5.01E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx3/b11.rea                                                                                        
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx3/b11.map                                                                                        
+ RANK     0 IEG    1793    1794    1801    1802    1921    1922    1929    1930
+ element load imbalance:            0           8           8
+ done :: mapping elements to processors
+  
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:        2048        2048         100
+ lx1  /lx2  /lx3 :           3           3           3
+ done :: read .rea file    3.0337     sec
+
+ setup mesh topology
+   Right-handed check complete for    2048 elements. OK.
+   setvert3d:   3       16465       18513       16465       16465
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 9049 unique labels shared
+   pairwise times (avg, min, max): 0.000119375 0.000109196 0.000139189
+   crystal router                : 9.56238e-05 9.48906e-05 9.67979e-05
+   all reduce                    : 0.00095594 0.000951099 0.000963807
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 31715.5 24172 36388
+   buffer bytes (avg, min, max): 4129.5 2896 4704
+   setupds time 4.8453E-02 seconds   0  3       16465        2048
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=           4
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    13685.9880144565     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    13685.9880144565     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           2           2
+ mg_ny:           1           2           2
+ mg_nz:           1           2           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2001 unique labels shared
+   pairwise times (avg, min, max): 0.000108534 9.03845e-05 0.0001297
+   crystal router                : 6.41578e-05 6.12974e-05 6.67095e-05
+   all reduce                    : 0.00029871 0.000297213 0.00030179
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 10640.5 8860 11860
+   buffer bytes (avg, min, max): 1310 944 1472
+   setupds time 1.3539E-02 seconds   1  2        2601        2048
+   setvert3d:   4       43641       60025       43641       43641
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 21217 unique labels shared
+   pairwise times (avg, min, max): 0.000112754 9.36985e-05 0.000135303
+   crystal router                : 8.85584e-05 8.74996e-05 8.99076e-05
+   all reduce                    : 0.00210341 0.0020988 0.00211508
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 64982.5 47740 75508
+   buffer bytes (avg, min, max): 8432 5872 9600
+   setupds time 5.8923E-02 seconds   2  4       43641        2048
+   setvert3d:   3       16465       18513       16465       16465
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 9049 unique labels shared
+   pairwise times (avg, min, max): 0.000107358 9.29117e-05 0.000128007
+   crystal router                : 8.97264e-05 8.90017e-05 9.05991e-05
+   all reduce                    : 0.000685744 0.000681901 0.000691199
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 31715.5 24172 36388
+   buffer bytes (avg, min, max): 4129.5 2896 4704
+   setupds time 2.7207E-02 seconds   3  3       16465        2048
+   setvert3d:   5       84129      139425       84129       84129
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 38505 unique labels shared
+   pairwise times (avg, min, max): 0.000114531 9.82046e-05 0.000134897
+   crystal router                : 9.90546e-05 9.77039e-05 0.000103307
+   all reduce                    : 0.00109386 0.0010874 0.00110002
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 110442 79564 129220
+   buffer bytes (avg, min, max): 14222 9872 16160
+   setupds time 5.6112E-02 seconds   4  5       84129        2048
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           2           2
+ h1_mg_ny:           1           2           2
+ h1_mg_nz:           1           2           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2001 unique labels shared
+   pairwise times (avg, min, max): 0.000104421 9.15051e-05 0.000120521
+   crystal router                : 6.77784e-05 6.7091e-05 6.89983e-05
+   all reduce                    : 0.000253326 0.000251913 0.000256205
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 10640.5 8860 11860
+   buffer bytes (avg, min, max): 1310 944 1472
+   setupds time 1.3270E-02 seconds   5  2        2601        2048
+   setvert3d:   4       43641       60025       43641       43641
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 21217 unique labels shared
+   pairwise times (avg, min, max): 0.000110648 9.51052e-05 0.000133204
+   crystal router                : 7.66043e-05 7.54118e-05 8.04186e-05
+   all reduce                    : 0.00115874 0.0011538 0.00116751
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 64982.5 47740 75508
+   buffer bytes (avg, min, max): 8432 5872 9600
+   setupds time 4.5775E-02 seconds   6  4       43641        2048
+   setvert3d:   3       16465       18513       16465       16465
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 9049 unique labels shared
+   pairwise times (avg, min, max): 9.96687e-05 8.69036e-05 0.000117302
+   crystal router                : 7.22208e-05 7.12872e-05 7.35044e-05
+   all reduce                    : 0.00068008 0.00067749 0.000683403
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 31715.5 24172 36388
+   buffer bytes (avg, min, max): 4129.5 2896 4704
+   setupds time 2.0928E-02 seconds   7  3       16465        2048
+   setvert3d:   5       84129      139425       84129       84129
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 38505 unique labels shared
+   pairwise times (avg, min, max): 0.000105937 9.26971e-05 0.000120902
+   crystal router                : 0.000128737 0.000127101 0.000130916
+   all reduce                    : 0.00104309 0.001038 0.0010565
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 15497.5 11644 17452
+   buffer bytes (avg, min, max): 7750.5 4336 9632
+   setupds time 4.9730E-02 seconds   8  5       84129        2048
+   setvert3d:   3       16465       18513       16465       16465
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 9049 unique labels shared
+   pairwise times (avg, min, max): 9.73326e-05 8.49962e-05 0.000113297
+   crystal router                : 6.62887e-05 6.53982e-05 6.76155e-05
+   all reduce                    : 0.000641974 0.000638795 0.000647593
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 31715.5 24172 36388
+   buffer bytes (avg, min, max): 4129.5 2896 4704
+   setupds time 1.9465E-02 seconds   9  3       16465        2048
+   setvert3d:   5       84129      139425       84129       84129
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 38505 unique labels shared
+   pairwise times (avg, min, max): 0.000106083 9.36985e-05 0.000119901
+   crystal router                : 9.54777e-05 9.43184e-05 9.63926e-05
+   all reduce                    : 0.00103592 0.00102949 0.0010453
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 110442 79564 129220
+   buffer bytes (avg, min, max): 14222 9872 16160
+   setupds time 3.2696E-02 seconds  10  5       84129        2048
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2001 unique labels shared
+   pairwise times (avg, min, max): 9.41087e-05 8.42094e-05 0.000104094
+   crystal router                : 6.14664e-05 5.9104e-05 6.27041e-05
+   all reduce                    : 0.000232441 0.000230289 0.000236011
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 10640.5 8860 11860
+   buffer bytes (avg, min, max): 1310 944 1472
+ done :: setup h1 coarse grid   5.883789062500000E-002  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  3.7037E-02  1.4815E-01  1.4815E-01  0.0000E+00  0.0000E+00  0.0000E+00
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2987E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2788E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2799E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2756E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2803E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2769E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.4269E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5684E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5763E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5564E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.9506E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.4635E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.4588E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.4431E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.4967E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.4394E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.4333E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.4720E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2969E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.4365E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.4481E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2481E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2465E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2595E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2553E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2464E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2530E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2559E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2490E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.2461E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.3595E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5944E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5835E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6113E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5969E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5582E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5745E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5969E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.3244E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.3398E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.1337E-07
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.7492E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6656E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6709E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6258E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6643E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6643E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6258E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.7349E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.7445E-08
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx3/b11.sch                                   
+                                                      
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6982E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6621E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6581E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6630E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6537E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6564E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6572E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6530E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6543E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6551E-08
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error s
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5831E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5440E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5464E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5403E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5406E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5448E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.6070E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5431E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5374E-08
+ 
+nelt =       8, np =       256, nx1 =       3, elements =      2048
+Solve Time =   0.5380E-08
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+   2     2048  100  0.0000E+00  0.0000E+00  0.0000E+00 time for 3 hmholtz
+EXIT: quit after cggov          2
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  
+call exitt: dying ...
+  
+backtrace(): obtained 8 stack frames.
+./nek5000() [0x75d6e5]
+./nek5000() [0x940b99]
+./nek5000() [0x40d12c]
+./nek5000() [0x4238b6]
+./nek5000() [0x421e6e]
+./nek5000() [0x4054fe]
+/lib64/libc.so.6(__libc_start_main+0xf5) [0x2aaab1ca3b25]
+./nek5000() [0x405409]
+  
+total elapsed time             :   1.82013E+01 sec
+total solver time incl. I/O    :   0.00000E+00 sec
+time/timestep                  :   0.00000E+00 sec
+CPU seconds/timestep/gridpt    :   0.00000E+00 sec
+
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+  3     2048  3.9953E-05  3.9953E-05  3.9953E-05  error n
+Application 2255804 resources: utime ~4598s, stime ~90s, Rss ~23632, inblocks ~0, outblocks ~0

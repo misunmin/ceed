@@ -1,0 +1,2062 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:         512
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 3.81E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx5/b11.rea                                                                                        
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx5/b11.map                                                                                        
+ RANK     0 IEG    1921    1922    1929    1930
+ element load imbalance:            0           4           4
+ done :: mapping elements to processors
+  
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:        2048        2048         100
+ lx1  /lx2  /lx3 :           5           5           5
+ done :: read .rea file    6.2185     sec
+
+ setup mesh topology
+   Right-handed check complete for    2048 elements. OK.
+   setvert3d:   5       84129      139425       84129       84129
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 52425 unique labels shared
+   pairwise times (avg, min, max): 0.000129746 0.0001019 0.0001477
+   crystal router                : 0.000140308 0.000139189 0.000141692
+   all reduce                    : 0.00148125 0.001472 0.0014894
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 83847.5 61196 98924
+   buffer bytes (avg, min, max): 9510.75 6752 10416
+   setupds time 8.3954E-02 seconds   0  5       84129        2048
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=           7
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    105151.889707466     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    105151.889707466     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           2           4
+ mg_ny:           1           2           4
+ mg_nz:           1           2           4
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2481 unique labels shared
+   pairwise times (avg, min, max): 0.000113994 9.07898e-05 0.000133705
+   crystal router                : 8.36553e-05 8.23975e-05 8.48055e-05
+   all reduce                    : 0.000362966 0.000359988 0.000365877
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 8753 7724 9956
+   buffer bytes (avg, min, max): 940.25 688 1008
+   setupds time 1.8825E-02 seconds   1  2        2601        2048
+   setvert3d:   4       43641       60025       43641       43641
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 28609 unique labels shared
+   pairwise times (avg, min, max): 0.00011275 9.47952e-05 0.000130105
+   crystal router                : 0.00015253 0.000151277 0.000153995
+   all reduce                    : 0.00148524 0.0014746 0.00150321
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 6040.25 4076 6788
+   buffer bytes (avg, min, max): 3855.25 1984 4640
+   setupds time 6.3066E-02 seconds   2  4       43641        2048
+   setvert3d:   3       16465       18513       16465       16465
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 11961 unique labels shared
+   pairwise times (avg, min, max): 0.000110229 9.17196e-05 0.0001302
+   crystal router                : 7.40068e-05 7.33137e-05 7.48873e-05
+   all reduce                    : 0.000857902 0.000853801 0.000863123
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 24712.5 19500 28764
+   buffer bytes (avg, min, max): 2840 2048 3120
+   setupds time 2.5679E-02 seconds   3  3       16465        2048
+   setvert3d:   5       84129      139425       84129       84129
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 52425 unique labels shared
+   pairwise times (avg, min, max): 0.000113866 9.72033e-05 0.00012722
+   crystal router                : 0.000139175 0.000136995 0.000141692
+   all reduce                    : 0.00136899 0.00136039 0.00137942
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 9495.75 6428 10604
+   buffer bytes (avg, min, max): 5936.25 3120 7072
+   setupds time 5.8016E-02 seconds   4  5       84129        2048
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           2           4
+ h1_mg_ny:           1           2           4
+ h1_mg_nz:           1           2           4
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2481 unique labels shared
+   pairwise times (avg, min, max): 0.000106731 8.67844e-05 0.000124502
+   crystal router                : 6.7909e-05 6.72817e-05 6.90937e-05
+   all reduce                    : 0.000394476 0.000391984 0.000398302
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 8753 7724 9956
+   buffer bytes (avg, min, max): 940.25 688 1008
+   setupds time 1.9349E-02 seconds   5  2        2601        2048
+   setvert3d:   4       43641       60025       43641       43641
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 28609 unique labels shared
+   pairwise times (avg, min, max): 0.000111846 9.51052e-05 0.000128889
+   crystal router                : 0.000100328 9.93967e-05 0.000101686
+   all reduce                    : 0.00146567 0.00145872 0.00147791
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 49744 37324 58420
+   buffer bytes (avg, min, max): 5697.75 4112 6256
+   setupds time 3.5303E-02 seconds   6  4       43641        2048
+   setvert3d:   3       16465       18513       16465       16465
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 11961 unique labels shared
+   pairwise times (avg, min, max): 9.97657e-05 8.43048e-05 0.00011301
+   crystal router                : 8.20273e-05 8.111e-05 8.30173e-05
+   all reduce                    : 0.000862346 0.000858378 0.00087049
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 24712.5 19500 28764
+   buffer bytes (avg, min, max): 2840 2048 3120
+   setupds time 2.2876E-02 seconds   7  3       16465        2048
+   setvert3d:   5       84129      139425       84129       84129
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 52425 unique labels shared
+   pairwise times (avg, min, max): 0.000106686 9.10044e-05 0.000120211
+   crystal router                : 0.000101037 9.94921e-05 0.000105309
+   all reduce                    : 0.00139381 0.00138829 0.00140109
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 83847.5 61196 98924
+   buffer bytes (avg, min, max): 9510.75 6752 10416
+   setupds time 5.5582E-02 seconds   8  5       84129        2048
+   setvert3d:   5       84129      139425       84129       84129
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 52425 unique labels shared
+   pairwise times (avg, min, max): 0.00010312 8.9407e-05 0.000120401
+   crystal router                : 9.66077e-05 9.53913e-05 9.799e-05
+   all reduce                    : 0.00133649 0.00133049 0.00134599
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 83847.5 61196 98924
+   buffer bytes (avg, min, max): 9510.75 6752 10416
+   setupds time 3.4122E-02 seconds   9  5       84129        2048
+   setvert3d:   7      205041      461041      205041      205041
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 121561 unique labels shared
+   pairwise times (avg, min, max): 0.000109995 9.16004e-05 0.000126505
+   crystal router                : 0.000136059 0.000134301 0.000137997
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 18998.8 12860 21116
+   buffer bytes (avg, min, max): 11442.2 6160 13472
+   setupds time 4.9651E-02 seconds  10  7      205041        2048
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2481 unique labels shared
+   pairwise times (avg, min, max): 0.000100234 8.36134e-05 0.000116706
+   crystal router                : 7.00719e-05 6.89983e-05 7.11203e-05
+   all reduce                    : 0.000367603 0.000365806 0.00037291
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 8753 7724 9956
+   buffer bytes (avg, min, max): 940.25 688 1008
+ done :: setup h1 coarse grid   7.641482353210449E-002  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  5.6187E-03  2.2475E-02  2.2475E-02  1.5044E-16  1.5044E-16  4.2826E-16
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1082E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9798E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9757E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9667E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9791E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9784E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9908E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9848E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9651E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9682E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.5086E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.4849E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.4947E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.4984E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.4976E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.5042E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.4911E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.4967E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.4968E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.4920E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.7865E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.7551E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.7592E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.7624E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.7696E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.7513E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.7608E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.7617E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.7415E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.7410E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9904E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9648E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9729E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9874E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9863E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9812E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9752E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9808E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9802E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.9806E-09
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1217E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1190E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1186E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1180E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1196E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1217E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1201E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1200E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1188E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1200E-08
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx5/b11.sch                                   
+                                                      
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  5     2048  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.2162E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1974E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1937E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1950E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1990E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1976E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1963E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1956E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1962E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1944E-08
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error s
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1740E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1636E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1649E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1605E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1604E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1621E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1628E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1611E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1614E-08
+ 
+nelt =       4, np =       512, nx1 =       5, elements =      2048
+Solve Time =   0.1627E-08
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+   4     2048  100  0.0000E+00  0.0000E+00  0.0000E+00 time for 3 hmholtz
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+EXIT: quit after cggov          4
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  
+call exitt: dying ...
+  
+backtrace(): obtained 8 stack frames.
+./nek5000() [0x76e245]
+./nek5000() [0x951a99]
+./nek5000() [0x40d33c]
+./nek5000() [0x426a66]
+./nek5000() [0x42501e]
+./nek5000() [0x4054fe]
+/lib64/libc.so.6(__libc_start_main+0xf5) [0x2aaab1ca3b25]
+./nek5000() [0x405409]
+  
+total elapsed time             :   6.83460E+01 sec
+total solver time incl. I/O    :   0.00000E+00 sec
+time/timestep                  :   0.00000E+00 sec
+CPU seconds/timestep/gridpt    :   0.00000E+00 sec
+
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+  5     2048  5.6520E-09  5.6520E-09  5.6520E-09  error n
+Application 2256298 resources: utime ~34830s, stime ~210s, Rss ~25172, inblocks ~0, outblocks ~0

@@ -1,0 +1,544 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:           4
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 4.05E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx17/b6.rea                                                                                        
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx17/b6.map                                                                                        
+           0          16          16          64          64  NELV
+           2          16          16          64          64  NELV
+           1          16          16          64          64  NELV
+           3          16          16          64          64  NELV
+ RANK     0 IEG      33      34      35      36      37      38      39      40
+                     49      50      51      52      53      54      55      56
+ element load imbalance:            0          16          16
+ done :: mapping elements to processors
+  
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:          64          64         100
+ lx1  /lx2  /lx3 :          17          17          17
+ done :: read .rea file   0.51907E-01 sec
+
+ setup mesh topology
+   Right-handed check complete for      64 elements. OK.
+   setvert3d:  17       58625      274625       58625       58625
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 8385 unique labels shared
+   pairwise times (avg, min, max): 3.74138e-05 3.67165e-05 3.84092e-05
+   crystal router                : 7.19309e-05 7.1907e-05 7.20024e-05
+   all reduce                    : 0.000127244 0.000126696 0.000127792
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 282044 282044 282044
+   buffer bytes (avg, min, max): 69680 69680 69680
+   setupds time 6.0787E-02 seconds   0 17       58625          64
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=          25
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    1448008.05254145     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    1448008.05254145     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           9          16
+ mg_ny:           1           9          16
+ mg_nz:           1           9          16
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 45 unique labels shared
+   pairwise times (avg, min, max): 6.69956e-06 6.48499e-06 6.91414e-06
+   crystal router                : 6.19888e-06 6.10352e-06 6.29425e-06
+   all reduce                    : 2.52724e-05 2.52008e-05 2.53916e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 4524 4524 4524
+   buffer bytes (avg, min, max): 960 960 960
+   setupds time 2.5189E-03 seconds   1  2         125          64
+   setvert3d:   4        1685        2197        1685        1685
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 325 unique labels shared
+   pairwise times (avg, min, max): 7.03335e-06 6.91414e-06 7.10487e-06
+   crystal router                : 5.76973e-06 5.6982e-06 5.79357e-06
+   all reduce                    : 3.92675e-05 3.92199e-05 3.93152e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 26444 26444 26444
+   buffer bytes (avg, min, max): 6656 6656 6656
+   setupds time 5.2111E-03 seconds   2  4        1685          64
+   setvert3d:  10       17885       50653       17885       17885
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2701 unique labels shared
+   pairwise times (avg, min, max): 9.70364e-06 9.70364e-06 9.70364e-06
+   crystal router                : 2.62976e-05 2.62976e-05 2.62976e-05
+   all reduce                    : 5.89311e-05 5.86987e-05 5.90086e-05
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 92316 92316 92316
+   buffer bytes (avg, min, max): 23088 23088 23088
+   setupds time 1.8156E-02 seconds   3 10       17885          64
+   setvert3d:  12       27125       91125       27125       27125
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 4005 unique labels shared
+   pairwise times (avg, min, max): 2.1553e-05 2.12908e-05 2.18153e-05
+   crystal router                : 3.83973e-05 3.829e-05 3.85046e-05
+   all reduce                    : 6.66082e-05 6.63042e-05 6.67095e-05
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 135964 135964 135964
+   buffer bytes (avg, min, max): 33840 33840 33840
+   setupds time 2.4740E-02 seconds   4 12       27125          64
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           3          16
+ h1_mg_ny:           1           3          16
+ h1_mg_nz:           1           3          16
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 45 unique labels shared
+   pairwise times (avg, min, max): 6.7234e-06 6.60419e-06 6.79493e-06
+   crystal router                : 4.02927e-06 4.00543e-06 4.1008e-06
+   all reduce                    : 2.51651e-05 2.50816e-05 2.52962e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 4524 4524 4524
+   buffer bytes (avg, min, max): 960 960 960
+   setupds time 2.5671E-03 seconds   5  2         125          64
+   setvert3d:   4        1685        2197        1685        1685
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 325 unique labels shared
+   pairwise times (avg, min, max): 7.08103e-06 7.00951e-06 7.20024e-06
+   crystal router                : 5.93662e-06 5.88894e-06 5.98431e-06
+   all reduce                    : 3.79562e-05 3.79086e-05 3.80039e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 26444 26444 26444
+   buffer bytes (avg, min, max): 6656 6656 6656
+   setupds time 4.8130E-03 seconds   6  4        1685          64
+   setvert3d:   4        1685        2197        1685        1685
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 325 unique labels shared
+   pairwise times (avg, min, max): 9.13143e-06 8.98838e-06 9.32217e-06
+   crystal router                : 5.97239e-06 5.88894e-06 6.00815e-06
+   all reduce                    : 3.73662e-05 3.71933e-05 3.75032e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 26444 26444 26444
+   buffer bytes (avg, min, max): 6656 6656 6656
+   setupds time 4.6549E-03 seconds   7  4        1685          64
+   setvert3d:   6        5165        9261        5165        5165
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 861 unique labels shared
+   pairwise times (avg, min, max): 6.29425e-06 6.19888e-06 6.38962e-06
+   crystal router                : 9.197e-06 9.08375e-06 9.29832e-06
+   all reduce                    : 4.33981e-05 4.32968e-05 4.34875e-05
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 30364 30364 30364
+   buffer bytes (avg, min, max): 7728 7728 7728
+   setupds time 7.5040E-03 seconds   8  6        5165          64
+   setvert3d:  17       58625      274625       58625       58625
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 8385 unique labels shared
+   pairwise times (avg, min, max): 2.19703e-05 2.16961e-05 2.22921e-05
+   crystal router                : 6.09696e-05 6.07967e-05 6.1202e-05
+   all reduce                    : 0.000120729 0.000119996 0.000121403
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 282044 282044 282044
+   buffer bytes (avg, min, max): 69680 69680 69680
+   setupds time 5.5927E-02 seconds   9 17       58625          64
+   setvert3d:  19       74585      389017       74585       74585
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 10585 unique labels shared
+   pairwise times (avg, min, max): 2.13504e-05 2.11e-05 2.15054e-05
+   crystal router                : 6.84857e-05 6.82116e-05 6.86169e-05
+   all reduce                    : 0.000144345 0.000143194 0.000145292
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 355260 355260 355260
+   buffer bytes (avg, min, max): 87600 87600 87600
+   setupds time 7.5417E-02 seconds  10 19       74585          64
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 45 unique labels shared
+   pairwise times (avg, min, max): 7.32541e-06 7.20024e-06 7.41482e-06
+   crystal router                : 4.17233e-06 4.1008e-06 4.19617e-06
+   all reduce                    : 2.21014e-05 2.2006e-05 2.21968e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 4524 4524 4524
+   buffer bytes (avg, min, max): 960 960 960
+ done :: setup h1 coarse grid   5.505895614624023E-002  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  8.6637E-04  8.6637E-04  8.6637E-04  1.0461E-16  1.0461E-16  1.0461E-16
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2046E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2040E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2040E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2040E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1908E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1909E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1908E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1908E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1908E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1908E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1908E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1908E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1908E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1908E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1951E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1952E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1952E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1952E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1951E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1952E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1951E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1951E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1951E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1952E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1995E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1995E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1994E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1994E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1995E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1995E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1995E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1995E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1995E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.1994E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2041E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2040E-07
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx17/b6.sch                                   
+                                                      
+ 17       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17       64  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2169E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2170E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2170E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2169E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2170E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2169E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2169E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2169E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2170E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2169E-07
+ 17       64  1.2380E-06  1.2380E-06  1.2380E-06  error s
+ 17       64  1.2380E-06  1.2380E-06  1.2380E-06  error s
+ 17       64  1.2380E-06  1.2380E-06  1.2380E-06  error s
+ 17       64  1.2380E-06  1.2380E-06  1.2380E-06  error s
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2481E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2481E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2481E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2481E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2481E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2482E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2480E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2480E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2481E-07
+ 
+nelt =      16, np =         4, nx1 =      17, elements =        64
+Solve Time =   0.2481E-07
+ 17       64  1.2380E-06  1.2380E-06  1.2380E-06  error n
+ 17       64  1.2380E-06  1.2380E-06  1.2380E-06  error n
+ 17       64  1.2380E-06  1.2380E-06  1.2380E-06  error n
+ 17       64  1.2380E-06  1.2380E-06  1.2380E-06  error n
+  16       64  100  0.0000E+00  0.0000E+00  0.0000E+00 time for 3 hmholtz
+EXIT: quit after cggov         16
+  
+call exitt: dying ...
+  
+backtrace(): obtained 8 stack frames.
+./nek5000() [0x7836f5]
+./nek5000() [0x967469]
+./nek5000() [0x40e0fc]
+./nek5000() [0x4276f6]
+./nek5000() [0x425cae]
+./nek5000() [0x4054fe]
+/lib64/libc.so.6(__libc_start_main+0xf5) [0x2aaab1ca3b25]
+./nek5000() [0x405409]
+  
+total elapsed time             :   2.09233E+02 sec
+total solver time incl. I/O    :   0.00000E+00 sec
+time/timestep                  :   0.00000E+00 sec
+CPU seconds/timestep/gridpt    :   0.00000E+00 sec
+
+Application 2259191 resources: utime ~784s, stime ~32s, Rss ~136560, inblocks ~0, outblocks ~0

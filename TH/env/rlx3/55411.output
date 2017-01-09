@@ -1,0 +1,2061 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:         512
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 2.86E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx3/b13.rea                                                                                        
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx3/b13.map                                                                                        
+ RANK     0 IEG    7681    7682    7683    7684    7697    7698    7699    7700
+                   7937    7938    7939    7940    7953    7954    7955    7956
+ element load imbalance:            0          16          16
+ done :: mapping elements to processors
+  
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:        8192        8192         100
+ lx1  /lx2  /lx3 :           3           3           3
+ done :: read .rea file    25.823     sec
+
+ setup mesh topology
+   Right-handed check complete for    8192 elements. OK.
+   setvert3d:   3       62593       70785       62593       62593
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 31785 unique labels shared
+   pairwise times (avg, min, max): 0.000120569 0.0001019 0.000142121
+   crystal router                : 0.000157488 0.000156713 0.000158501
+   all reduce                    : 0.00293573 0.00291469 0.0029531
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 8845.75 6716 9644
+   buffer bytes (avg, min, max): 4196.25 2160 5024
+   setupds time 9.5258E-02 seconds   0  3       62593        8192
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=           4
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    36656.5657983119     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    36656.5657983119     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           2           2
+ mg_ny:           1           2           2
+ mg_nz:           1           2           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 7017 unique labels shared
+   pairwise times (avg, min, max): 0.00011659 9.21965e-05 0.000137115
+   crystal router                : 8.25375e-05 8.16822e-05 8.38041e-05
+   all reduce                    : 0.000589897 0.00058701 0.000594997
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 17852.4 14420 20228
+   buffer bytes (avg, min, max): 1988.25 1392 2288
+   setupds time 2.7642E-02 seconds   1  2        9537        8192
+   setvert3d:   4      167361      232897      167361      167361
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 74473 unique labels shared
+   pairwise times (avg, min, max): 0.000118793 0.000100207 0.000137115
+   crystal router                : 0.000126718 0.000125003 0.000128889
+   all reduce                    : 0.0018717 0.0018645 0.0018883
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 121186 86356 140740
+   buffer bytes (avg, min, max): 13583.8 9440 15600
+   setupds time 9.7476E-02 seconds   2  4      167361        8192
+   setvert3d:   3       62593       70785       62593       62593
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 31785 unique labels shared
+   pairwise times (avg, min, max): 0.000105514 9.05991e-05 0.000122309
+   crystal router                : 0.000110349 0.000109291 0.000111604
+   all reduce                    : 0.00157203 0.001565 0.0015897
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 57591.4 42516 66468
+   buffer bytes (avg, min, max): 6480.25 4512 7536
+   setupds time 5.2999E-02 seconds   3  3       62593        8192
+   setvert3d:   5      323841      545025      323841      323841
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 135081 unique labels shared
+   pairwise times (avg, min, max): 0.000120282 0.000104809 0.000145698
+   crystal router                : 0.000176021 0.000173092 0.000178719
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 28833.8 22076 31148
+   buffer bytes (avg, min, max): 12572.2 6768 14752
+   setupds time 6.5691E-02 seconds   4  5      323841        8192
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           2           2
+ h1_mg_ny:           1           2           2
+ h1_mg_nz:           1           2           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 7017 unique labels shared
+   pairwise times (avg, min, max): 0.00010859 9.30071e-05 0.0001261
+   crystal router                : 8.39783e-05 8.28981e-05 8.83102e-05
+   all reduce                    : 0.000638286 0.000635099 0.000642991
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 17852.4 14420 20228
+   buffer bytes (avg, min, max): 1988.25 1392 2288
+   setupds time 2.3773E-02 seconds   5  2        9537        8192
+   setvert3d:   4      167361      232897      167361      167361
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 74473 unique labels shared
+   pairwise times (avg, min, max): 0.000114681 9.76801e-05 0.000138187
+   crystal router                : 0.000157766 0.000155592 0.0001616
+   all reduce                    : 0.00186984 0.0018616 0.0018815
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 17327.8 13244 18764
+   buffer bytes (avg, min, max): 7824.25 4144 9248
+   setupds time 8.2598E-02 seconds   6  4      167361        8192
+   setvert3d:   3       62593       70785       62593       62593
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 31785 unique labels shared
+   pairwise times (avg, min, max): 0.000101758 8.63075e-05 0.000116205
+   crystal router                : 9.86304e-05 9.75847e-05 0.000100112
+   all reduce                    : 0.00156205 0.00155239 0.0015795
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 57591.4 42516 66468
+   buffer bytes (avg, min, max): 6480.25 4512 7536
+   setupds time 3.9642E-02 seconds   7  3       62593        8192
+   setvert3d:   5      323841      545025      323841      323841
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 135081 unique labels shared
+   pairwise times (avg, min, max): 0.000115307 9.83953e-05 0.000132108
+   crystal router                : 0.000161097 0.000157094 0.000163817
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 28833.8 22076 31148
+   buffer bytes (avg, min, max): 12572.2 6768 14752
+   setupds time 2.8233E-02 seconds   8  5      323841        8192
+   setvert3d:   3       62593       70785       62593       62593
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 31785 unique labels shared
+   pairwise times (avg, min, max): 0.000102292 8.95977e-05 0.000117898
+   crystal router                : 9.31106e-05 9.20057e-05 9.42945e-05
+   all reduce                    : 0.00155643 0.0015456 0.00156901
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 57591.4 42516 66468
+   buffer bytes (avg, min, max): 6480.25 4512 7536
+   setupds time 3.5046E-02 seconds   9  3       62593        8192
+   setvert3d:   5      323841      545025      323841      323841
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 135081 unique labels shared
+   pairwise times (avg, min, max): 0.000111122 9.60827e-05 0.000127292
+   crystal router                : 0.000162124 0.000159883 0.000166988
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 28833.8 22076 31148
+   buffer bytes (avg, min, max): 12572.2 6768 14752
+   setupds time 2.8441E-02 seconds  10  5      323841        8192
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 7017 unique labels shared
+   pairwise times (avg, min, max): 9.61544e-05 8.54969e-05 0.000108099
+   crystal router                : 9.56139e-05 9.41992e-05 9.72033e-05
+   all reduce                    : 0.000565409 0.000556517 0.000571704
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 17852.4 14420 20228
+   buffer bytes (avg, min, max): 1988.25 1392 2288
+ done :: setup h1 coarse grid   0.205776929855347       sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  3.7037E-02  3.7037E-02  1.4815E-01  0.0000E+00  0.0000E+00  0.0000E+00
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1034E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.9732E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.9666E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.9708E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.9460E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.9519E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.9440E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.9596E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.9460E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.9541E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.6292E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.6096E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.6083E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.6056E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.6022E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.6117E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.6102E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.6187E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.6092E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.5996E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.9158E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.8955E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.8983E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.8878E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.8899E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.8873E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.8780E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.8901E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.8925E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.8876E-09
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1155E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1123E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1124E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1128E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1146E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1135E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1147E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1145E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1123E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1140E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1476E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1381E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1378E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1362E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1369E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1363E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1373E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1372E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1383E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1355E-08
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx3/b13.sch                                   
+                                                      
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3     8192  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.2473E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.2281E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.2272E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.2268E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.2253E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.2286E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.2278E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.2274E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.2283E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.2264E-08
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error s
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.2026E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1899E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1910E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1887E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1901E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1874E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1912E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1895E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1888E-08
+ 
+nelt =      16, np =       512, nx1 =       3, elements =      8192
+Solve Time =   0.1887E-08
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+   2     8192  100  0.0000E+00  0.0000E+00  0.0000E+00 time for 3 hmholtz
+EXIT: quit after cggov          2
+  
+call exitt: dying ...
+  
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+backtrace(): obtained 8 stack frames.
+./nek5000() [0x75d6e5]
+./nek5000() [0x940b99]
+./nek5000() [0x40d12c]
+./nek5000() [0x4238b6]
+./nek5000() [0x421e6e]
+./nek5000() [0x4054fe]
+/lib64/libc.so.6(__libc_start_main+0xf5) [0x2aaab1ca3b25]
+./nek5000() [0x405409]
+  
+total elapsed time             :   8.16359E+01 sec
+total solver time incl. I/O    :   0.00000E+00 sec
+time/timestep                  :   0.00000E+00 sec
+CPU seconds/timestep/gridpt    :   0.00000E+00 sec
+
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+  3     8192  4.6034E-06  4.6034E-06  4.6034E-06  error n
+Application 2255825 resources: utime ~41071s, stime ~228s, Rss ~24428, inblocks ~0, outblocks ~0

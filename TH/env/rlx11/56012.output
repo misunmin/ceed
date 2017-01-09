@@ -1,0 +1,2057 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:         512
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 2.86E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx11/b12.rea                                                                                       
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx11/b12.map                                                                                       
+ RANK     0 IEG    3585    3586    3601    3602    3841    3842    3857    3858
+ element load imbalance:            0           8           8
+ done :: mapping elements to processors
+  
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:        4096        4096         100
+ lx1  /lx2  /lx3 :          11          11          11
+ done :: read .rea file    11.775     sec
+
+ setup mesh topology
+   Right-handed check complete for    4096 elements. OK.
+   setvert3d:  11     1187297     4173281     1187297     1187297
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 521017 unique labels shared
+   pairwise times (avg, min, max): 0.000156349 0.000129604 0.000184703
+   crystal router                : 0.0005074 0.000499392 0.000518608
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 86094.2 62908 93772
+   buffer bytes (avg, min, max): 40216.8 22192 46496
+   setupds time 1.3459E-01 seconds   0 11     1187297        4096
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=          16
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    3826112.73474935     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    3826112.73474935     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           5          10
+ mg_ny:           1           5          10
+ mg_nz:           1           5          10
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 3913 unique labels shared
+   pairwise times (avg, min, max): 0.000107232 9.31978e-05 0.000119305
+   crystal router                : 8.50531e-05 8.44002e-05 8.62122e-05
+   all reduce                    : 0.000390076 0.000386715 0.000393105
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 12026.6 10236 13548
+   buffer bytes (avg, min, max): 1370 944 1552
+   setupds time 2.4494E-02 seconds   1  2        4913        4096
+   setvert3d:   4       84881      117649       84881       84881
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 43561 unique labels shared
+   pairwise times (avg, min, max): 0.000110655 9.41038e-05 0.000125194
+   crystal router                : 0.000110017 0.000109005 0.000111485
+   all reduce                    : 0.00129947 0.00129249 0.00131061
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 74546.6 54780 86220
+   buffer bytes (avg, min, max): 8852 5872 10320
+   setupds time 5.8549E-02 seconds   2  4       84881        4096
+   setvert3d:   6      269297      531441      269297      269297
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 126217 unique labels shared
+   pairwise times (avg, min, max): 0.000117013 0.000102997 0.000132298
+   crystal router                : 0.000157022 0.000153995 0.000161982
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 23709.2 17308 25852
+   buffer bytes (avg, min, max): 11866.8 6352 13856
+   setupds time 6.8062E-02 seconds   3  6      269297        4096
+   setvert3d:   8      558161     1442897      558161      558161
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 251881 unique labels shared
+   pairwise times (avg, min, max): 0.000127034 0.000107598 0.000142193
+   crystal router                : 0.000241209 0.000236988 0.000246811
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 43911.2 32092 47836
+   buffer bytes (avg, min, max): 21190.8 11536 24608
+   setupds time 9.0171E-02 seconds   4  8      558161        4096
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           3          10
+ h1_mg_ny:           1           3          10
+ h1_mg_nz:           1           3          10
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 3913 unique labels shared
+   pairwise times (avg, min, max): 0.000107912 9.38892e-05 0.000123
+   crystal router                : 8.98935e-05 8.85963e-05 9.45091e-05
+   all reduce                    : 0.000464618 0.000454402 0.000468707
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 12026.6 10236 13548
+   buffer bytes (avg, min, max): 1370 944 1552
+   setupds time 2.5169E-02 seconds   5  2        4913        4096
+   setvert3d:   4       84881      117649       84881       84881
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 43561 unique labels shared
+   pairwise times (avg, min, max): 0.000113345 9.57012e-05 0.000131798
+   crystal router                : 0.000105233 0.000101209 0.000107312
+   all reduce                    : 0.00125835 0.00125351 0.00126739
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 74546.6 54780 86220
+   buffer bytes (avg, min, max): 8852 5872 10320
+   setupds time 4.8374E-02 seconds   6  4       84881        4096
+   setvert3d:   4       84881      117649       84881       84881
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 43561 unique labels shared
+   pairwise times (avg, min, max): 0.000104185 8.95977e-05 0.000117779
+   crystal router                : 0.000109991 0.000107098 0.000114799
+   all reduce                    : 0.00122299 0.0012156 0.001232
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 74546.6 54780 86220
+   buffer bytes (avg, min, max): 8852 5872 10320
+   setupds time 4.0048E-02 seconds   7  4       84881        4096
+   setvert3d:   6      269297      531441      269297      269297
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 126217 unique labels shared
+   pairwise times (avg, min, max): 0.00011577 9.98974e-05 0.000132012
+   crystal router                : 0.000163896 0.000161386 0.000168395
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 23709.2 17308 25852
+   buffer bytes (avg, min, max): 11866.8 6352 13856
+   setupds time 5.4962E-02 seconds   8  6      269297        4096
+   setvert3d:  11     1187297     4173281     1187297     1187297
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 521017 unique labels shared
+   pairwise times (avg, min, max): 0.000134909 0.000115204 0.000153685
+   crystal router                : 0.000469531 0.000453281 0.000485921
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 86094.2 62908 93772
+   buffer bytes (avg, min, max): 40216.8 22192 46496
+   setupds time 1.2105E-01 seconds   9 11     1187297        4096
+   setvert3d:  13     1737281     7189057     1737281     1737281
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 754201 unique labels shared
+   pairwise times (avg, min, max): 0.000143419 0.000122094 0.00016098
+   crystal router                : 0.000675021 0.000665283 0.000686097
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 122136 89212 133036
+   buffer bytes (avg, min, max): 56260.8 31216 64928
+   setupds time 1.7660E-01 seconds  10 13     1737281        4096
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 3913 unique labels shared
+   pairwise times (avg, min, max): 0.000100023 8.2016e-05 0.000117803
+   crystal router                : 7.66512e-05 7.56979e-05 7.8392e-05
+   all reduce                    : 0.00042497 0.000422907 0.000428605
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 12026.6 10236 13548
+   buffer bytes (avg, min, max): 1370 944 1552
+ done :: setup h1 coarse grid   0.148288011550903       sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  8.4559E-04  8.4559E-04  8.4559E-04  1.0022E-16  1.0022E-16  1.0022E-16
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2314E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2287E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2286E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2287E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2282E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2286E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2282E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2302E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2278E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2292E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.1730E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.1717E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.1722E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.1719E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.1714E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.1734E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.1724E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.1714E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.1718E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.1732E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2021E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2009E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2020E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2011E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.1998E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2015E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2002E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2010E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2008E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2009E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2272E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2246E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2240E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2232E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2257E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2235E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2249E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2253E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2257E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2249E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2469E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2470E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2468E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2469E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2468E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2469E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2468E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2469E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2469E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.2468E-09
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx11/b12.sch                                  
+                                                      
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 11     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3602E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3536E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3537E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3564E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3540E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3545E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3532E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3537E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3561E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3538E-09
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 11     4096  1.2101E-14  1.2101E-14  1.2101E-14  error s
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3387E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3362E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3374E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3363E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3368E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3357E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3372E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3353E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3368E-09
+ 
+nelt =       8, np =       512, nx1 =      11, elements =      4096
+Solve Time =   0.3372E-09
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+  10     4096  100  0.0000E+00  0.0000E+00  0.0000E+00 time for 3 hmholtz
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+EXIT: quit after cggov         10
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+  
+call exitt: dying ...
+  
+backtrace(): obtained 8 stack frames.
+./nek5000() [0x77c7b5]
+./nek5000() [0x960549]
+./nek5000() [0x40de8c]
+./nek5000() [0x426686]
+./nek5000() [0x424c3e]
+./nek5000() [0x4054fe]
+/lib64/libc.so.6(__libc_start_main+0xf5) [0x2aaab1ca3b25]
+./nek5000() [0x405409]
+  
+total elapsed time             :   1.19056E+03 sec
+total solver time incl. I/O    :   0.00000E+00 sec
+time/timestep                  :   0.00000E+00 sec
+CPU seconds/timestep/gridpt    :   0.00000E+00 sec
+
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+ 11     4096  1.2434E-14  1.2434E-14  1.2434E-14  error n
+Application 2258273 resources: utime ~608087s, stime ~1332s, Rss ~46844, inblocks ~0, outblocks ~0

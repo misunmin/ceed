@@ -1,0 +1,2518 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:        2048
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 3.10E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx9/b15.rea                                                                                        
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx9/b15.map                                                                                        
+ RANK     0 IEG   31260   31292   31293   31323   31324   31325   31356   32283
+                  32284   32285   32315   32316   32317   32347   32348   32349
+ element load imbalance:            0          16          16
+ done :: mapping elements to processors
+  
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:       32768       32768         100
+ lx1  /lx2  /lx3 :           9           9           9
+ done :: read .rea file    388.35     sec
+
+ setup mesh topology
+   Right-handed check complete for   32768 elements. OK.
+   setvert3d:   9     5735169    16974593     5735169     5735169
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2744039 unique labels shared
+   pairwise times (avg, min, max): 0.000251711 0.000195408 0.000290012
+   crystal router                : 0.000840041 0.00082829 0.000866914
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 113409 80156 125964
+   buffer bytes (avg, min, max): 52420.2 24160 66768
+   setupds time 2.3476E-01 seconds   0  9     5735169       32768
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=          13
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    6618675.74407789     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    6618675.74407789     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           5           8
+ mg_ny:           1           5           8
+ mg_nz:           1           5           8
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 31343 unique labels shared
+   pairwise times (avg, min, max): 0.000109207 8.67128e-05 0.000131106
+   crystal router                : 0.00015374 0.000151682 0.000156498
+   all reduce                    : 0.00270233 0.0026938 0.0027195
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 3501.3 2428 4140
+   buffer bytes (avg, min, max): 1916.08 752 2560
+   setupds time 6.1243E-02 seconds   1  2       35937       32768
+   setvert3d:   4      650529      912673      650529      650529
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 359679 unique labels shared
+   pairwise times (avg, min, max): 0.000138445 0.00010941 0.000166106
+   crystal router                : 0.00030152 0.000295711 0.000308299
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 18508.5 13116 20844
+   buffer bytes (avg, min, max): 9365.83 4080 12000
+   setupds time 8.1405E-02 seconds   2  4      650529       32768
+   setvert3d:   6     2076129     4173281     2076129     2076129
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1045391 unique labels shared
+   pairwise times (avg, min, max): 0.000196333 0.000144506 0.000241613
+   crystal router                : 0.000440615 0.000433087 0.000452304
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 46631.8 33020 51948
+   buffer bytes (avg, min, max): 22399.6 10096 28416
+   setupds time 1.4908E-01 seconds   3  6     2076129       32768
+   setvert3d:   8     4312737    11390625     4312737     4312737
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2088479 unique labels shared
+   pairwise times (avg, min, max): 0.000227073 0.000178719 0.000264001
+   crystal router                : 0.000693026 0.000683117 0.000709701
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 87871 62140 97580
+   buffer bytes (avg, min, max): 41017.3 18800 52192
+   setupds time 1.8811E-01 seconds   4  8     4312737       32768
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           3           8
+ h1_mg_ny:           1           3           8
+ h1_mg_nz:           1           3           8
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 31343 unique labels shared
+   pairwise times (avg, min, max): 0.000107394 8.36134e-05 0.000130701
+   crystal router                : 0.000146193 0.000144196 0.000148702
+   all reduce                    : 0.00235003 0.00233929 0.00236781
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 3501.3 2428 4140
+   buffer bytes (avg, min, max): 1916.08 752 2560
+   setupds time 5.3741E-02 seconds   5  2       35937       32768
+   setvert3d:   4      650529      912673      650529      650529
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 359679 unique labels shared
+   pairwise times (avg, min, max): 0.000136989 0.000106692 0.00016489
+   crystal router                : 0.000283619 0.000279498 0.000288105
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 18508.5 13116 20844
+   buffer bytes (avg, min, max): 9365.83 4080 12000
+   setupds time 8.0747E-02 seconds   6  4      650529       32768
+   setvert3d:   4      650529      912673      650529      650529
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 359679 unique labels shared
+   pairwise times (avg, min, max): 0.000133397 0.000102115 0.000160313
+   crystal router                : 0.000281009 0.0002738 0.000286818
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 18508.5 13116 20844
+   buffer bytes (avg, min, max): 9365.83 4080 12000
+   setupds time 6.8856E-02 seconds   7  4      650529       32768
+   setvert3d:   6     2076129     4173281     2076129     2076129
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1045391 unique labels shared
+   pairwise times (avg, min, max): 0.00019061 0.000144291 0.000229502
+   crystal router                : 0.000452034 0.000445199 0.000461197
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 46631.8 33020 51948
+   buffer bytes (avg, min, max): 22399.6 10096 28416
+   setupds time 1.4131E-01 seconds   8  6     2076129       32768
+   setvert3d:   9     5735169    16974593     5735169     5735169
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2744039 unique labels shared
+   pairwise times (avg, min, max): 0.000225504 0.000177121 0.000262403
+   crystal router                : 0.00082753 0.000818896 0.000842094
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 113409 80156 125964
+   buffer bytes (avg, min, max): 52420.2 24160 66768
+   setupds time 2.2398E-01 seconds   9  9     5735169       32768
+   setvert3d:  11     9188289    33076161     9188289     9188289
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 4323191 unique labels shared
+   pairwise times (avg, min, max): 0.000251473 0.000189614 0.000294995
+   crystal router                : 0.0011379 0.0011204 0.00115781
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 174322 123100 193676
+   buffer bytes (avg, min, max): 79414 36896 101296
+   setupds time 3.0287E-01 seconds  10 11     9188289       32768
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 31343 unique labels shared
+   pairwise times (avg, min, max): 0.000109978 8.08954e-05 0.000133204
+   crystal router                : 0.000129194 0.000126696 0.000132513
+   all reduce                    : 0.00180388 0.00179129 0.0018357
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 23600.6 17340 29652
+   buffer bytes (avg, min, max): 2168.58 1392 3120
+ done :: setup h1 coarse grid    2.08468103408813       sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  8.0124E-04  8.0124E-04  8.0124E-04  1.2870E-16  1.2870E-16  1.2870E-16
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6081E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5961E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5979E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5935E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5932E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5935E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5942E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5906E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5940E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5994E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.4397E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.4345E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.4383E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.4344E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.4364E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.4317E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.4353E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.4349E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.4389E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.4361E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5326E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5311E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5314E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5303E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5259E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5299E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5267E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5331E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5286E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.5315E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6125E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6081E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6079E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6101E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6064E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6106E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6126E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6090E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6106E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6113E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6909E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6927E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6907E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6943E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6921E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6967E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6927E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6892E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6875E-10
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.6947E-10
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx9/b15.sch                                   
+                                                      
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  9    32768  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.1064E-09
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.1035E-09
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.1037E-09
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.1035E-09
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.1035E-09
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.1043E-09
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.1045E-09
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.1046E-09
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.1037E-09
+ 
+nelt =      16, np =      2048, nx1 =       9, elements =     32768
+Solve Time =   0.1038E-09
+Application 2258361 exit codes: 1
+Application 2258361 resources: utime ~230067s, stime ~468s, Rss ~47172, inblocks ~0, outblocks ~0

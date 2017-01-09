@@ -1,0 +1,984 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:         512
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 2.15E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx17/b12.rea                                                                                       
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx17/b12.map                                                                                       
+ RANK     0 IEG    3585    3586    3601    3602    3841    3842    3857    3858
+ element load imbalance:            0           8           8
+ done :: mapping elements to processors
+  
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:        4096        4096         100
+ lx1  /lx2  /lx3 :          17          17          17
+ done :: read .rea file    11.618     sec
+
+ setup mesh topology
+   Right-handed check complete for    4096 elements. OK.
+   setvert3d:  17     3150593    16974593     3150593     3150593
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1349593 unique labels shared
+   pairwise times (avg, min, max): 0.000232596 0.000191498 0.000276804
+   crystal router                : 0.00106761 0.0010541 0.00108418
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 213228 155644 232300
+   buffer bytes (avg, min, max): 96412.8 53872 111008
+   setupds time 2.8870E-01 seconds   0 17     3150593        4096
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=          25
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    23169519.5913129     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    23169519.5913129     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           9          16
+ mg_ny:           1           9          16
+ mg_nz:           1           9          16
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 3913 unique labels shared
+   pairwise times (avg, min, max): 0.000111797 9.77039e-05 0.000127506
+   crystal router                : 7.60661e-05 7.2813e-05 7.78913e-05
+   all reduce                    : 0.000431752 0.000427294 0.000438905
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 12026.6 10236 13548
+   buffer bytes (avg, min, max): 1370 944 1552
+   setupds time 2.5792E-02 seconds   1  2        4913        4096
+   setvert3d:   4       84881      117649       84881       84881
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 43561 unique labels shared
+   pairwise times (avg, min, max): 0.000112256 9.50813e-05 0.000135899
+   crystal router                : 0.000111164 0.000107408 0.000119996
+   all reduce                    : 0.00124347 0.00123842 0.00125828
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 74546.6 54780 86220
+   buffer bytes (avg, min, max): 8852 5872 10320
+   setupds time 5.4774E-02 seconds   2  4       84881        4096
+   setvert3d:  10      951473     3048625      951473      951473
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 420553 unique labels shared
+   pairwise times (avg, min, max): 0.000136187 0.000118804 0.000153899
+   crystal router                : 0.000392875 0.000385189 0.000409603
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 70449.2 51484 76732
+   buffer bytes (avg, min, max): 33202.8 18256 38432
+   setupds time 1.0870E-01 seconds   3 10      951473        4096
+   setvert3d:  12     1449233     5545233     1449233     1449233
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 632233 unique labels shared
+   pairwise times (avg, min, max): 0.000147239 0.000126314 0.000167108
+   crystal router                : 0.000600216 0.000590706 0.000609112
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 103323 75484 112540
+   buffer bytes (avg, min, max): 47902.8 26512 55328
+   setupds time 1.4816E-01 seconds   4 12     1449233        4096
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           3          16
+ h1_mg_ny:           1           3          16
+ h1_mg_nz:           1           3          16
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 3913 unique labels shared
+   pairwise times (avg, min, max): 0.000103608 9.02176e-05 0.000117087
+   crystal router                : 7.06235e-05 6.89983e-05 7.42912e-05
+   all reduce                    : 0.000460582 0.000452805 0.000468707
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 12026.6 10236 13548
+   buffer bytes (avg, min, max): 1370 944 1552
+   setupds time 2.1420E-02 seconds   5  2        4913        4096
+   setvert3d:   4       84881      117649       84881       84881
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 43561 unique labels shared
+   pairwise times (avg, min, max): 0.000112056 9.44853e-05 0.000125599
+   crystal router                : 9.83517e-05 9.46045e-05 0.000102091
+   all reduce                    : 0.00120593 0.00120058 0.00121138
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 74546.6 54780 86220
+   buffer bytes (avg, min, max): 8852 5872 10320
+   setupds time 4.8776E-02 seconds   6  4       84881        4096
+   setvert3d:   4       84881      117649       84881       84881
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 43561 unique labels shared
+   pairwise times (avg, min, max): 0.000103581 8.97884e-05 0.000117302
+   crystal router                : 0.000105317 0.00010159 0.000107098
+   all reduce                    : 0.00117949 0.00117278 0.00118661
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 74546.6 54780 86220
+   buffer bytes (avg, min, max): 8852 5872 10320
+   setupds time 4.8908E-02 seconds   7  4       84881        4096
+   setvert3d:   6      269297      531441      269297      269297
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 126217 unique labels shared
+   pairwise times (avg, min, max): 0.000113407 9.92775e-05 0.000127602
+   crystal router                : 0.000160642 0.000158596 0.000165892
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 23709.2 17308 25852
+   buffer bytes (avg, min, max): 11866.8 6352 13856
+   setupds time 6.8839E-02 seconds   8  6      269297        4096
+   setvert3d:  17     3150593    16974593     3150593     3150593
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1349593 unique labels shared
+   pairwise times (avg, min, max): 0.000192704 0.000163603 0.000229597
+   crystal router                : 0.00102849 0.00101709 0.00105281
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 213228 155644 232300
+   buffer bytes (avg, min, max): 96412.8 53872 111008
+   setupds time 2.7751E-01 seconds   9 17     3150593        4096
+   setvert3d:  19     4013921    24137569     4013921     4013921
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1711801 unique labels shared
+   pairwise times (avg, min, max): 0.000213156 0.000177789 0.000254107
+   crystal router                : 0.00125982 0.00124102 0.00127411
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 268278 195772 292300
+   buffer bytes (avg, min, max): 120521 67504 138656
+   setupds time 3.4877E-01 seconds  10 19     4013921        4096
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 3913 unique labels shared
+   pairwise times (avg, min, max): 9.96983e-05 8.54015e-05 0.0001158
+   crystal router                : 0.000104396 0.000103593 0.00010581
+   all reduce                    : 0.000394611 0.000392485 0.000398612
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 12026.6 10236 13548
+   buffer bytes (avg, min, max): 1370 944 1552
+ done :: setup h1 coarse grid   0.162907838821411       sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  2.1659E-04  2.1659E-04  2.1659E-04  1.2034E-16  1.2034E-16  1.2034E-16
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2006E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1997E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1985E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1982E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1993E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1986E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1995E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1986E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1984E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1981E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1695E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1678E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1676E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1691E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1679E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1690E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1677E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1679E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1676E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1677E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1835E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1821E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1832E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1820E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1835E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1818E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1819E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1819E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1819E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1831E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1959E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1971E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1957E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1966E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1956E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1956E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1959E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1970E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1956E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.1956E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2112E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2111E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2097E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2098E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2098E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2108E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2095E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2097E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2109E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2110E-09
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx17/b12.sch                                  
+                                                      
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17     4096  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2470E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2464E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2469E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2461E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2470E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2465E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2470E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2462E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2460E-09
+ 
+nelt =       8, np =       512, nx1 =      17, elements =      4096
+Solve Time =   0.2474E-09
+Application 2260362 exit codes: 1
+Application 2260362 resources: utime ~57359s, stime ~127s, Rss ~106208, inblocks ~0, outblocks ~0

@@ -1,0 +1,655 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:          32
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 3.10E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx3/b7.rea                                                                                         
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx3/b7.map                                                                                         
+           0           4           4         128         128  NELV
+          20           4           4         128         128  NELV
+          26           4           4         128         128  NELV
+          27           4           4         128         128  NELV
+          30           4           4         128         128  NELV
+          18           4           4         128         128  NELV
+          19           4           4         128         128  NELV
+          13           4           4         128         128  NELV
+           1           4           4         128         128  NELV
+           9           4           4         128         128  NELV
+          16           4           4         128         128  NELV
+          11           4           4         128         128  NELV
+          21           4           4         128         128  NELV
+           4           4           4         128         128  NELV
+          24           4           4         128         128  NELV
+           5           4           4         128         128  NELV
+           7           4           4         128         128  NELV
+          31           4           4         128         128  NELV
+           2           4           4         128         128  NELV
+           6           4           4         128         128  NELV
+          29           4           4         128         128  NELV
+          10           4           4         128         128  NELV
+           8           4           4         128         128  NELV
+          28           4           4         128         128  NELV
+          25           4           4         128         128  NELV
+          22           4           4         128         128  NELV
+          15           4           4         128         128  NELV
+          17           4           4         128         128  NELV
+           3           4           4         128         128  NELV
+          14           4           4         128         128  NELV
+          12           4           4         128         128  NELV
+          23           4           4         128         128  NELV
+ RANK     0 IEG     113     114     117     118
+ element load imbalance:            0           4           4
+ done :: mapping elements to processors
+  
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:         128         128         100
+ lx1  /lx2  /lx3 :           3           3           3
+ done :: read .rea file   0.89203E-01 sec
+
+ setup mesh topology
+   Right-handed check complete for     128 elements. OK.
+   setvert3d:   3        1249        1377        1249        1249
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 737 unique labels shared
+   pairwise times (avg, min, max): 2.89045e-05 2.57969e-05 3.26872e-05
+   crystal router                : 1.41568e-05 1.38998e-05 1.45912e-05
+   all reduce                    : 6.49489e-05 6.45876e-05 6.52075e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 13486 10972 15124
+   buffer bytes (avg, min, max): 2104 1824 2304
+   setupds time 1.7645E-02 seconds   0  3        1249         128
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=           4
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    2239.76659645466     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    2239.76659645466     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           2           2
+ mg_ny:           1           2           2
+ mg_nz:           1           2           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 193 unique labels shared
+   pairwise times (avg, min, max): 3.47145e-05 3.15189e-05 3.87907e-05
+   crystal router                : 1.05038e-05 1.03951e-05 1.06096e-05
+   all reduce                    : 4.3571e-05 4.33922e-05 4.39167e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 5046 4332 5556
+   buffer bytes (avg, min, max): 700 624 768
+   setupds time 5.1792E-03 seconds   1  2         225         128
+   setvert3d:   4        3201        4225        3201        3201
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1633 unique labels shared
+   pairwise times (avg, min, max): 3.01428e-05 2.72036e-05 3.53098e-05
+   crystal router                : 1.53437e-05 1.50919e-05 1.55926e-05
+   all reduce                    : 8.11361e-05 8.04901e-05 8.18014e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 26486 21068 29876
+   buffer bytes (avg, min, max): 4316 3584 4784
+   setupds time 8.1649E-03 seconds   2  4        3201         128
+   setvert3d:   3        1249        1377        1249        1249
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 737 unique labels shared
+   pairwise times (avg, min, max): 3.05846e-05 2.76089e-05 3.42131e-05
+   crystal router                : 1.2207e-05 1.19925e-05 1.23978e-05
+   all reduce                    : 7.52017e-05 7.46965e-05 7.55072e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 13486 10972 15124
+   buffer bytes (avg, min, max): 2104 1824 2304
+   setupds time 6.7821E-03 seconds   3  3        1249         128
+   setvert3d:   5        6081        9537        6081        6081
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2881 unique labels shared
+   pairwise times (avg, min, max): 3.39106e-05 3.11852e-05 3.96013e-05
+   crystal router                : 1.96353e-05 1.91927e-05 2.04086e-05
+   all reduce                    : 0.000117684 0.000116491 0.000118303
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 44046 34620 49812
+   buffer bytes (avg, min, max): 7328 5984 8160
+   setupds time 1.0083E-02 seconds   4  5        6081         128
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           2           2
+ h1_mg_ny:           1           2           2
+ h1_mg_nz:           1           2           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 193 unique labels shared
+   pairwise times (avg, min, max): 3.01592e-05 2.52008e-05 3.77178e-05
+   crystal router                : 1.43558e-05 1.42097e-05 1.44958e-05
+   all reduce                    : 4.33326e-05 4.30822e-05 4.35829e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 5046 4332 5556
+   buffer bytes (avg, min, max): 700 624 768
+   setupds time 5.1429E-03 seconds   5  2         225         128
+   setvert3d:   4        3201        4225        3201        3201
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1633 unique labels shared
+   pairwise times (avg, min, max): 3.03596e-05 2.49147e-05 3.55005e-05
+   crystal router                : 1.78985e-05 1.77145e-05 1.8096e-05
+   all reduce                    : 9.31807e-05 9.23872e-05 9.38177e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 26486 21068 29876
+   buffer bytes (avg, min, max): 4316 3584 4784
+   setupds time 8.3659E-03 seconds   6  4        3201         128
+   setvert3d:   3        1249        1377        1249        1249
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 737 unique labels shared
+   pairwise times (avg, min, max): 2.75314e-05 2.55823e-05 3.16858e-05
+   crystal router                : 1.40876e-05 1.36137e-05 1.48058e-05
+   all reduce                    : 7.369e-05 7.33852e-05 7.40051e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 13486 10972 15124
+   buffer bytes (avg, min, max): 2104 1824 2304
+   setupds time 5.5602E-03 seconds   7  3        1249         128
+   setvert3d:   5        6081        9537        6081        6081
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2881 unique labels shared
+   pairwise times (avg, min, max): 2.63959e-05 2.41995e-05 3.01123e-05
+   crystal router                : 3.0046e-05 2.9707e-05 3.07083e-05
+   all reduce                    : 0.000116447 0.000115585 0.000117397
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 7868 6428 8348
+   buffer bytes (avg, min, max): 4320 3120 4720
+   setupds time 8.4310E-03 seconds   8  5        6081         128
+   setvert3d:   3        1249        1377        1249        1249
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 737 unique labels shared
+   pairwise times (avg, min, max): 2.04839e-05 1.9598e-05 2.21968e-05
+   crystal router                : 1.51739e-05 1.4782e-05 1.57118e-05
+   all reduce                    : 7.3044e-05 6.50167e-05 7.39098e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 13486 10972 15124
+   buffer bytes (avg, min, max): 2104 1824 2304
+   setupds time 5.5010E-03 seconds   9  3        1249         128
+   setvert3d:   5        6081        9537        6081        6081
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2881 unique labels shared
+   pairwise times (avg, min, max): 2.63877e-05 2.37942e-05 2.95877e-05
+   crystal router                : 2.25186e-05 2.19822e-05 2.28882e-05
+   all reduce                    : 0.000118664 0.000117683 0.0001194
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 44046 34620 49812
+   buffer bytes (avg, min, max): 7328 5984 8160
+   setupds time 8.4019E-03 seconds  10  5        6081         128
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 193 unique labels shared
+   pairwise times (avg, min, max): 3.0563e-05 2.45094e-05 3.43084e-05
+   crystal router                : 1.50464e-05 1.48058e-05 1.53065e-05
+   all reduce                    : 4.15005e-05 4.12941e-05 4.17948e-05
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 5046 4332 5556
+   buffer bytes (avg, min, max): 700 624 768
+ done :: setup h1 coarse grid   1.051187515258789E-002  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  1.4815E-01  1.4815E-01  5.9259E-01  0.0000E+00  0.0000E+00  0.0000E+00
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1093E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.9712E-08
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2845E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.3086E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.3104E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2989E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2960E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2893E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2941E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2884E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.6915E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1824E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2247E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1948E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1812E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2044E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2111E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2219E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2083E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2035E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.6770E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2518E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2507E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2373E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2325E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2313E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2720E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2403E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2479E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2373E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.6848E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2815E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2576E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2596E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2596E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.3058E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2585E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2539E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2548E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2470E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1043E-06
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.3183E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.3008E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2826E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.3088E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2835E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2847E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2778E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2817E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.2835E-07
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx3/b7.sch                                    
+                                                      
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+  3      128  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1827E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1703E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1691E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1684E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1686E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1703E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1682E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1684E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1677E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1698E-07
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error s
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1795E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1654E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1663E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1648E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1640E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1641E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1636E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1649E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1639E-07
+ 
+nelt =       4, np =        32, nx1 =       3, elements =       128
+Solve Time =   0.1652E-07
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+  3      128  1.1421E-03  1.1421E-03  1.1421E-03  error n
+   2      128  100  0.0000E+00  0.0000E+00  0.0000E+00 time for 3 hmholtz
+EXIT: quit after cggov          2
+  
+call exitt: dying ...
+  
+backtrace(): obtained 8 stack frames.
+./nek5000() [0x75d6e5]
+./nek5000() [0x940b99]
+./nek5000() [0x40d12c]
+./nek5000() [0x4238b6]
+./nek5000() [0x421e6e]
+./nek5000() [0x4054fe]
+/lib64/libc.so.6(__libc_start_main+0xf5) [0x2aaab1ca3b25]
+./nek5000() [0x405409]
+  
+total elapsed time             :   1.61945E+00 sec
+total solver time incl. I/O    :   0.00000E+00 sec
+time/timestep                  :   0.00000E+00 sec
+CPU seconds/timestep/gridpt    :   0.00000E+00 sec
+
+Application 2255799 resources: utime ~51s, stime ~5s, Rss ~15652, inblocks ~0, outblocks ~0

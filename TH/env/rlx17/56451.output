@@ -1,0 +1,908 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:         128
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 4.05E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx17/b9.rea                                                                                        
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx17/b9.map                                                                                        
+ RANK     0 IEG     449     450     457     458
+ element load imbalance:            0           4           4
+ done :: mapping elements to processors
+  
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:         512         512         100
+ lx1  /lx2  /lx3 :          17          17          17
+ done :: read .rea file   0.40352     sec
+
+ setup mesh topology
+   Right-handed check complete for     512 elements. OK.
+   setvert3d:  17      418689     2146689      418689      418689
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 209817 unique labels shared
+   pairwise times (avg, min, max): 0.000230945 0.000209999 0.000255704
+   crystal router                : 0.000533856 0.000528812 0.00054009
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 111909 79580 131276
+   buffer bytes (avg, min, max): 60867 36720 76192
+   setupds time 1.4890E-01 seconds   0 17      418689         512
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=          25
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    5792275.25647568     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    5792275.25647568     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           9          16
+ mg_ny:           1           9          16
+ mg_nz:           1           9          16
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 657 unique labels shared
+   pairwise times (avg, min, max): 0.000115201 0.000103307 0.000129294
+   crystal router                : 4.11721e-05 4.08888e-05 4.21047e-05
+   all reduce                    : 0.000122696 0.000121999 0.000123405
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 7051 6436 7708
+   buffer bytes (avg, min, max): 871 688 1008
+   setupds time 9.0840E-03 seconds   1  2         729         512
+   setvert3d:   4       11529       15625       11529       11529
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 6913 unique labels shared
+   pairwise times (avg, min, max): 0.000109933 9.99928e-05 0.000122595
+   crystal router                : 7.98559e-05 7.91073e-05 8.03947e-05
+   all reduce                    : 0.000449467 0.000446796 0.000452399
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 39003 30996 45276
+   buffer bytes (avg, min, max): 5253 4112 6256
+   setupds time 2.5817E-02 seconds   2  4       11529         512
+   setvert3d:  10      126873      389017      126873      126873
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 65617 unique labels shared
+   pairwise times (avg, min, max): 0.000133408 0.000116682 0.000149393
+   crystal router                : 0.0001865 0.000184011 0.000188684
+   all reduce                    : 0.00158129 0.0015754 0.00159421
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 37583 26828 44084
+   buffer bytes (avg, min, max): 21247 12640 26912
+   setupds time 1.1955E-01 seconds   3 10      126873         512
+   setvert3d:  12      192969      704969      192969      192969
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 98497 unique labels shared
+   pairwise times (avg, min, max): 0.000135741 0.000117993 0.000150299
+   crystal router                : 0.000224989 0.000221801 0.00022769
+   all reduce                    : 0.00270381 0.00269949 0.0027118
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 54739 39020 64196
+   buffer bytes (avg, min, max): 30487 18240 38432
+   setupds time 1.3416E-01 seconds   4 12      192969         512
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           3          16
+ h1_mg_ny:           1           3          16
+ h1_mg_nz:           1           3          16
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 657 unique labels shared
+   pairwise times (avg, min, max): 0.000103083 8.93116e-05 0.000114894
+   crystal router                : 4.9465e-05 4.88997e-05 5.02825e-05
+   all reduce                    : 0.00011907 0.000118089 0.000119996
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 7051 6436 7708
+   buffer bytes (avg, min, max): 871 688 1008
+   setupds time 9.5849E-03 seconds   5  2         729         512
+   setvert3d:   4       11529       15625       11529       11529
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 6913 unique labels shared
+   pairwise times (avg, min, max): 0.00010595 9.47952e-05 0.000118494
+   crystal router                : 4.93787e-05 4.88997e-05 5.00917e-05
+   all reduce                    : 0.000495543 0.000493002 0.000498295
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 39003 30996 45276
+   buffer bytes (avg, min, max): 5253 4112 6256
+   setupds time 2.2578E-02 seconds   6  4       11529         512
+   setvert3d:   4       11529       15625       11529       11529
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 6913 unique labels shared
+   pairwise times (avg, min, max): 0.000102053 8.95977e-05 0.000114298
+   crystal router                : 4.64682e-05 4.58002e-05 4.71115e-05
+   all reduce                    : 0.000473497 0.000470781 0.000477505
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 39003 30996 45276
+   buffer bytes (avg, min, max): 5253 4112 6256
+   setupds time 1.5885E-02 seconds   7  4       11529         512
+   setvert3d:   6       36153       68921       36153       36153
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 19825 unique labels shared
+   pairwise times (avg, min, max): 0.000107427 9.13143e-05 0.00012188
+   crystal router                : 7.70079e-05 7.5984e-05 7.80106e-05
+   all reduce                    : 0.00099638 0.000991893 0.00100369
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 98795 75524 116636
+   buffer bytes (avg, min, max): 13287 10032 15600
+   setupds time 4.8119E-02 seconds   8  6       36153         512
+   setvert3d:  17      418689     2146689      418689      418689
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 209817 unique labels shared
+   pairwise times (avg, min, max): 0.000186767 0.000161695 0.000209713
+   crystal router                : 0.000519365 0.000514603 0.000525498
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 111909 79580 131276
+   buffer bytes (avg, min, max): 60867 36720 76192
+   setupds time 1.4185E-01 seconds   9 17      418689         512
+   setvert3d:  19      533169     3048625      533169      533169
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 265993 unique labels shared
+   pairwise times (avg, min, max): 0.000187096 0.000164294 0.000213003
+   crystal router                : 0.000627424 0.000617194 0.000634718
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 140489 99836 164828
+   buffer bytes (avg, min, max): 75931 45904 94880
+   setupds time 1.5156E-01 seconds  10 19      533169         512
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 657 unique labels shared
+   pairwise times (avg, min, max): 9.29106e-05 8.15868e-05 0.000103903
+   crystal router                : 4.24122e-05 4.16994e-05 4.32968e-05
+   all reduce                    : 0.000121974 0.000121093 0.000123
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 7051 6436 7708
+   buffer bytes (avg, min, max): 871 688 1008
+ done :: setup h1 coarse grid   4.282307624816895E-002  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  4.3318E-04  4.3318E-04  4.3318E-04  1.1340E-16  1.1340E-16  1.1340E-16
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8450E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8247E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8239E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8244E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8250E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8247E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8243E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8240E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8243E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8234E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.6874E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.6862E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.6856E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.6861E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.6853E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.6851E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.6855E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.6851E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.6967E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.6850E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.7555E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.7556E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.7556E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.7549E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.7547E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.7543E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.7541E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.7535E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.7530E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.7544E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8161E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8162E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8158E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8162E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8150E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8251E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8163E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8160E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8160E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8158E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8794E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8768E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8771E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8764E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8759E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8769E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8764E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8770E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8781E-09
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.8770E-09
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx17/b9.sch                                   
+                                                      
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 17      512  1.0000E+00  1.0000E+00  1.0000E+00  error v
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1056E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1049E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1049E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1049E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1053E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1048E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1050E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1053E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1049E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1050E-08
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 17      512  7.3919E-07  7.3919E-07  7.3919E-07  error s
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1099E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1097E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1098E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1103E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1097E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1098E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1097E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1097E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1097E-08
+ 
+nelt =       4, np =       128, nx1 =      17, elements =       512
+Solve Time =   0.1098E-08
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+  16      512  100  0.0000E+00  0.0000E+00  0.0000E+00 time for 3 hmholtz
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+EXIT: quit after cggov         16
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+ 17      512  7.4083E-07  7.4083E-07  7.4083E-07  error n
+  
+call exitt: dying ...
+  
+backtrace(): obtained 8 stack frames.
+./nek5000() [0x7836f5]
+./nek5000() [0x967469]
+./nek5000() [0x40e0fc]
+./nek5000() [0x4276f6]
+./nek5000() [0x425cae]
+./nek5000() [0x4054fe]
+/lib64/libc.so.6(__libc_start_main+0xf5) [0x2aaab1ca3b25]
+./nek5000() [0x405409]
+  
+total elapsed time             :   5.77465E+02 sec
+total solver time incl. I/O    :   0.00000E+00 sec
+time/timestep                  :   0.00000E+00 sec
+CPU seconds/timestep/gridpt    :   0.00000E+00 sec
+
+Application 2259304 resources: utime ~73457s, stime ~413s, Rss ~85888, inblocks ~0, outblocks ~0

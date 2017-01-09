@@ -1,0 +1,443 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2016 UCHICAGO ARGONNE, LLC            |
+| Version:  16.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:         512
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 3.10E-07
+ Reading /gpfs/theta-fs1/home/thilina/env/lx19/b13.rea                                                                                       
+
+ mapping elements to processors
+ Reading /gpfs/theta-fs1/home/thilina/env/lx19/b13.map                                                                                       
+ RANK     0 IEG    7681    7682    7683    7684    7697    7698    7699    7700
+                   7937    7938    7939    7940    7953    7954    7955    7956
+ element load imbalance:            0          16          16
+ done :: mapping elements to processors
+  
+           0  objects found
+ 118   Parameters from file:
+   1      1.00000     p001 DENSITY
+   2     -100.000     p002 VISCOS
+   7      1.00000     p007 RHOCP
+   8      1.00000     p008 CONDUCT
+  11      1.00        p011 NSTEPS
+  12    -0.500000E-02 p012 DT
+  21     0.100000E-05 p021 DIVERGENCE
+  22     0.100000E-07 p022 HELMHOLTZ
+  24     0.100000E-09 p024 TOLREL
+  25     0.100000E-09 p025 TOLABS
+  26     0.250000     p026 COURANT/NTAU
+  27      2.00000     p027 TORDER
+  66      6.00000     p066 output : <0=ascii, else binary
+  67      6.00000     p067 restart: <0=ascii, else binary
+  99      3.00000     p099 dealiasing: <0--> off/3--> old/4--> new
+ 103     0.500000E-01 p103 weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:        8192        8192         100
+ lx1  /lx2  /lx3 :          19          19          19
+ done :: read .rea file    25.773     sec
+
+ setup mesh topology
+   Right-handed check complete for    8192 elements. OK.
+   setvert3d:  19     7944321    48191617     7944321     7944321
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2865193 unique labels shared
+   pairwise times (avg, min, max): 0.000254622 0.000221992 0.000303221
+   crystal router                : 0.00188487 0.00184979 0.00190921
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 507438 387644 547244
+   buffer bytes (avg, min, max): 196644 110704 226208
+   setupds time 6.0507E-01 seconds   0 19     7944321        8192
+           8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, lxd=          28
+  
+ Estimated eigenvalues
+ EIGAA =    9.86960440108936     
+ EIGGA =    48839208.3744131     
+ EIGAE =    9.86960440108936     
+ EIGAS =   8.333333333333333E-002
+ EIGGE =    48839208.3744131     
+ EIGGS =    2.00000000000000     
+  
+ verify mesh topology
+  0.000000000000000E+000   1.00000000000000       Xrange
+  0.000000000000000E+000   1.00000000000000       Yrange
+  0.000000000000000E+000   1.00000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           9          18
+ mg_ny:           1           9          18
+ mg_nz:           1           9          18
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 7017 unique labels shared
+   pairwise times (avg, min, max): 0.000130383 0.000107503 0.000145197
+   crystal router                : 9.21029e-05 9.11951e-05 9.35078e-05
+   all reduce                    : 0.000662659 0.000657892 0.000667214
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 17852.4 14420 20228
+   buffer bytes (avg, min, max): 1988.25 1392 2288
+   setupds time 3.2128E-02 seconds   1  2        9537        8192
+   setvert3d:   4      167361      232897      167361      167361
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 74473 unique labels shared
+   pairwise times (avg, min, max): 0.000123004 0.000104117 0.000144386
+   crystal router                : 0.000128758 0.000126696 0.000132918
+   all reduce                    : 0.00191438 0.00190001 0.00192478
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 121186 86356 140740
+   buffer bytes (avg, min, max): 13583.8 9440 15600
+   setupds time 8.4902E-02 seconds   2  4      167361        8192
+   setvert3d:  10     1881921     6076225     1881921     1881921
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 706921 unique labels shared
+   pairwise times (avg, min, max): 0.000148299 0.000126314 0.000172806
+   crystal router                : 0.000617825 0.000605392 0.000628901
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 131724 100796 142028
+   buffer bytes (avg, min, max): 53112.2 29488 61472
+   setupds time 1.2545E-01 seconds   3 10     1881921        8192
+   setvert3d:  12     2867137    11059137     2867137     2867137
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1061097 unique labels shared
+   pairwise times (avg, min, max): 0.000172894 0.000153399 0.000194502
+   crystal router                : 0.000827802 0.000816298 0.000836897
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 194048 148412 209228
+   buffer bytes (avg, min, max): 77168.2 43056 89120
+   setupds time 1.8823E-01 seconds   4 12     2867137        8192
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           3          18
+ h1_mg_ny:           1           3          18
+ h1_mg_nz:           1           3          18
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 7017 unique labels shared
+   pairwise times (avg, min, max): 0.000100318 8.67128e-05 0.000118208
+   crystal router                : 7.65782e-05 7.40051e-05 8.69989e-05
+   all reduce                    : 0.000599504 0.000595999 0.000606894
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 17852.4 14420 20228
+   buffer bytes (avg, min, max): 1988.25 1392 2288
+   setupds time 2.7498E-02 seconds   5  2        9537        8192
+   setvert3d:   4      167361      232897      167361      167361
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 74473 unique labels shared
+   pairwise times (avg, min, max): 0.000119744 0.000101614 0.000140977
+   crystal router                : 0.00012092 0.000116396 0.000123811
+   all reduce                    : 0.00189813 0.00189078 0.00191588
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 121186 86356 140740
+   buffer bytes (avg, min, max): 13583.8 9440 15600
+   setupds time 8.1223E-02 seconds   6  4      167361        8192
+   setvert3d:   4      167361      232897      167361      167361
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 74473 unique labels shared
+   pairwise times (avg, min, max): 0.000104334 9.05991e-05 0.000120378
+   crystal router                : 0.000120297 0.000118613 0.000122499
+   all reduce                    : 0.0018677 0.00185778 0.00188339
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 17327.8 13244 18764
+   buffer bytes (avg, min, max): 7824.25 4144 9248
+   setupds time 6.2826E-02 seconds   7  4      167361        8192
+   setvert3d:   6      532033     1056321      532033      532033
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 213609 unique labels shared
+   pairwise times (avg, min, max): 0.00011177 9.62019e-05 0.000131798
+   crystal router                : 0.00019065 0.000187898 0.000194883
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 43363.8 33212 46796
+   buffer bytes (avg, min, max): 18440.2 10032 21536
+   setupds time 4.7593E-02 seconds   8  6      532033        8192
+   setvert3d:  19     7944321    48191617     7944321     7944321
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 2865193 unique labels shared
+   pairwise times (avg, min, max): 0.000252205 0.000204301 0.000295115
+   crystal router                : 0.00183842 0.00180931 0.00185881
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 507438 387644 547244
+   buffer bytes (avg, min, max): 196644 110704 226208
+   setupds time 5.7371E-01 seconds   9 19     7944321        8192
+   setvert3d:  21     9860353    66049281     9860353     9860353
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 3541929 unique labels shared
+   pairwise times (avg, min, max): 0.000298785 0.000243211 0.00034492
+   crystal router                : 0.00222653 0.00218961 0.00225229
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 624194 476732 673196
+   buffer bytes (avg, min, max): 240860 135792 276896
+   setupds time 7.9737E-01 seconds  10 21     9860353        8192
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 7017 unique labels shared
+   pairwise times (avg, min, max): 9.2679e-05 8.10146e-05 0.000104809
+   crystal router                : 8.32476e-05 8.2016e-05 8.5187e-05
+   all reduce                    : 0.000534544 0.000531793 0.000541592
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 17852.4 14420 20228
+   buffer bytes (avg, min, max): 1988.25 1392 2288
+ done :: setup h1 coarse grid   0.306318044662476       sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max     1.0000       1.0000       1.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+GFM max:  7.6768E-05  7.6768E-05  3.0707E-04  4.1260E-17  1.6470E-16  1.6470E-16
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1942E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1930E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1929E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1925E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1930E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1929E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1923E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1928E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1930E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1924E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1686E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1689E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1690E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1684E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1691E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1689E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1685E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1685E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1691E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1690E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1765E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1769E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1768E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1763E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1769E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1768E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1764E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1764E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1769E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1768E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1850E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1855E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1853E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1850E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1855E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1855E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1850E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1854E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1854E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1849E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1936E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1940E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1941E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1936E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1941E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1941E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1935E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1941E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1940E-09
+ 
+nelt =      16, np =       512, nx1 =      19, elements =      8192
+Solve Time =   0.1935E-09
+ schfile:
+ /gpfs/theta-fs1/home/thilina/env/lx19/b13.sch                                  
+                                                      
+Application 2260500 exit codes: 1
+Application 2260500 resources: utime ~57312s, stime ~139s, Rss ~197708, inblocks ~0, outblocks ~0
